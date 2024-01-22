@@ -9,6 +9,12 @@ class GymUser(auth_models.AbstractUser):
         unique=True,
     )
 
+    username = None
+
+    USERNAME_FIELD = 'email'
+
+    REQUIRED_FIELDS = []
+
 
 UserModel = get_user_model()
 
@@ -38,7 +44,6 @@ class Membership(models.Model):
     )
 
     end_date = models.DateField(
-
     )
 
     membership_type = models.CharField(

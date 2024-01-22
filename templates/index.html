@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Hello, {{ request.user }}</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'register user' %}">Register</a></li>
+                <li><a href="{% url 'login user' %}">Login</a></li>
+                <li><a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a></li>
+            </ul>
+
+            <form id="logout-form" method="post" action="{% url 'logout user' %}" style="display: none;">
+                {% csrf_token %}
+            </form>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Hello, {{ request.user }}</h1>
+    </main>
 </body>
 </html>
