@@ -1,0 +1,30 @@
+{% load static %}
+
+<nav>
+    <a href="{% url 'index' %}" class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="Logo">
+        <h1>PowerPeak</h1>
+    </a>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Prices</a></li>
+        <li><a href="#">Products</a></li>
+    
+        {% if request.user.is_authenticated %}
+            {% if request.user.is_staff %}
+                <li><a href="admin/">Administration</a></li>
+            {% endif %}
+            <li><a href="#">Profile</a></li>
+            <li><a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'register user' %}">Register</a></li>
+            <li><a href="{% url 'login user' %}">Login</a></li>
+        {% endif %}
+    </ul>
+
+    <form id="logout-form" method="post" action="{% url 'logout user' %}" style="display: none;">
+        {% csrf_token %}
+    </form>
+</nav>

@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'register user' %}">Register</a></li>
-                <li><a href="{% url 'login user' %}">Login</a></li>
-                <li><a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a></li>
-            </ul>
+{% extends 'common/base.html' %}
 
-            <form id="logout-form" method="post" action="{% url 'logout user' %}" style="display: none;">
-                {% csrf_token %}
-            </form>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Hello, {{ request.user }}</h1>
-    </main>
-</body>
-</html>
+{% block content %}
+    <h1>Hello, {{ request.user }}</h1>
+{% endblock %}

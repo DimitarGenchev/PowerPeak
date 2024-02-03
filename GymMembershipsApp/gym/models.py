@@ -1,5 +1,4 @@
-from datetime import timedelta
-
+from dateutil.relativedelta import relativedelta
 from django.contrib.auth import models as auth_models, get_user_model
 from django.db import models
 
@@ -44,6 +43,8 @@ class Membership(models.Model):
     )
 
     end_date = models.DateField(
+        blank=True,
+        null=True,
     )
 
     membership_type = models.CharField(
@@ -54,6 +55,8 @@ class Membership(models.Model):
     price = models.DecimalField(
         max_digits=5,
         decimal_places=2,
+        blank=True,
+        null=True,
     )
 
     user = models.ForeignKey(
@@ -62,9 +65,11 @@ class Membership(models.Model):
     )
 
     def save(self, *args, **kwargs):
-        self.end_date = self.start_date + timedelta(days=self.duration*30)
-        self.price = 50 * self.duration
+        result = super().save(*args, **kwargs)
 
-        return super().save(*args, **kwargs)
+        if self.end_date is None and self.price is None:
+            self.end_date = self.start_date + relativedelta(months=self.duration)
+            self.price = 50 * self.duration
+            self.save()
 
-
+        return result
