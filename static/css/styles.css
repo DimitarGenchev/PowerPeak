@@ -3,15 +3,16 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
     font: 16px/1.5 Merriweather;
     color: #D9534F;
+    box-sizing: border-box;
 }
 
 body {
+
 }
 
 a {
@@ -25,6 +26,35 @@ img {
     height: auto;
 }
 
+form {
+    flex: 0 0 20%;
+    background-color: black;
+    border-radius: 1em;
+    padding: 2em;
+}
+
+label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+button {
+    margin-top: 1em;
+    padding: 0.3em 0;
+    width: 100%;
+    background-color: #FFFF;
+    font-size: 1.2em;
+}
+
+input {
+    display: block;
+    margin-bottom: 0.3em;
+    width: 100%;
+    height: 1.5em;
+    font-size: 1.2em;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -33,12 +63,15 @@ img {
 }
 
 .container header {
-    flex-basis: 100px;
+    flex-basis: 120px;
     background-color: black;
 }
 
 .container main {
     flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    padding: 0 2em;
 }
 
 .container footer {
@@ -51,22 +84,45 @@ img {
 
 .container header nav {
     height: 100%;
+    width: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1em;
 }
 
 .container header nav .logo {
+    flex: 0 0 250px;
     display: flex;
     align-items: center;
-    flex-basis: 120px;
+    transition: 0.3s ease-in;
 }
+
+.container header nav .logo:hover {
+    flex-basis: 240px;
+}
+
 .container header nav ul {
     display: flex;
+    justify-content: space-between;
     gap: 1em;
     list-style: none outside;
 }
 
+.container header nav .logo a {
+    display: block;
+}
+
 .container header nav ul li a {
+    background-color: #D9534F;
+    color: black;
+    border-radius: 0.4em;
+    padding: 0.3em;
     font-size: 1.3em;
+    transition: 0.3s ease-in;
+}
+
+.container header nav ul li a:hover {
+    background-color: #B02B27;
+    color: white;
 }
