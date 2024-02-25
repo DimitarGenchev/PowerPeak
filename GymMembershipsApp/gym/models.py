@@ -2,6 +2,8 @@ from dateutil.relativedelta import relativedelta
 from django.contrib.auth import models as auth_models, get_user_model
 from django.db import models
 
+from GymMembershipsApp.gym.utils import determine_membership_price
+
 
 class GymUser(auth_models.AbstractUser):
     email = models.EmailField(
@@ -18,16 +20,36 @@ class GymUser(auth_models.AbstractUser):
 UserModel = get_user_model()
 
 
+class MembershipType(models.Model):
+    name = models.CharField(
+        max_length=30,
+    )
+
+    price_for_one_month = models.DecimalField(
+        max_digits=4,
+        decimal_places=2,
+    )
+
+    price_for_three_months = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+    )
+
+    price_for_six_months = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+    )
+
+    price_for_twelve_months = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class Membership(models.Model):
-    class MembershipTypeChoices(models.TextChoices):
-        SCHOOL_STUDENT = 'school', 'School Student'
-        UNIVERSITY_STUDENT = 'university', 'University Student'
-        ADULT = 'adult', 'Adult'
-
-        @classmethod
-        def max_length(cls):
-            return max(len(choice.value) for choice in cls)
-
     class DurationChoices(models.IntegerChoices):
         ONE_MONTH = 1, '1 month'
         THREE_MONTHS = 3, '3 months'
@@ -47,15 +69,16 @@ class Membership(models.Model):
         null=True,
     )
 
-    membership_type = models.CharField(
-        max_length=MembershipTypeChoices.max_length(),
-        choices=MembershipTypeChoices.choices,
-    )
-
     price = models.DecimalField(
         max_digits=5,
         decimal_places=2,
         blank=True,
+        null=True,
+    )
+
+    membership_type = models.ForeignKey(
+        MembershipType,
+        on_delete=models.SET_NULL,
         null=True,
     )
 
@@ -69,7 +92,8 @@ class Membership(models.Model):
 
         if self.end_date is None and self.price is None:
             self.end_date = self.start_date + relativedelta(months=self.duration)
-            self.price = 50 * self.duration
+            self.price = determine_membership_price(self.duration, self.membership_type)
+
             self.save()
 
         return result

@@ -1,0 +1,9 @@
+.site-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-main {
+    flex-grow: 1;
+}
