@@ -7,9 +7,19 @@
 }
 
 .menuToggle a {
+    display: block;
     text-decoration: none;
-    color: #232323;   
-    transition: color 0.3s ease;
+    background-color: rgb(136, 0, 27);
+    color: white;   
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    text-align: center;
+    border-bottom: 2px solid black;
+    transition: 0.3s ease-in;
+}
+
+.menuToggle li:first-child a {
+    border-top: 2px solid black;
 }
 
 .menuToggle input {
@@ -51,7 +61,7 @@
 .menuToggle input:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
-    background: #232323;
+    background: #cdcdcd;
 }
 
 .menuToggle input:checked ~ span:nth-last-child(3) {
@@ -66,15 +76,14 @@
 .main-nav ul {
     display: flex;
     flex-direction: column;
-    gap: 1em;
     list-style: none outside;
     position: fixed;
     top: 0; right: 0;
-    width: 20em;
+    width: 300px;
     height: 100vh;
-    padding: 5em 0 0 0;
+    padding-top: 5.6em;
     font-size: 1.2em;
-    background-color: yellow;
+    background-color: rgb(35, 35, 35);
     -webkit-font-smoothing: antialiased;
     margin: 0;
     transform-origin: 100% 0%;
@@ -82,24 +91,26 @@
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
-.main-nav ul li {
-    background-color: white;
-    text-align: center;
-}
-
 .menuToggle input:checked ~ ul {
     transform: none;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1350px) {
     .main-nav ul {
         width: auto;
         position: static;
         flex-direction: row;
+        gap: 1em;
         background: none;
         padding-top: 0;
         height: auto;
         transform: none;
+    }
+
+    .main-nav a {
+        padding: 0.3em 0.5em;
+        border-radius: 5px;
+        border: none;
     }
 
     .menuToggle span {
@@ -109,5 +120,10 @@
     .menuToggle input {
         display: none;
     }
+}
 
+@media (hover: hover) {
+    .main-nav a:hover {
+        background-color: rgb(115, 0, 20);
+    }
 }
