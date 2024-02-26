@@ -14,8 +14,9 @@
 }
 
 .hero-text {
-    max-width: 65%;
+    max-width: 70%;
     color: white;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -26,8 +27,44 @@
 }
 
 .hero-button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 1.2em;
     transition: 0.3s ease-in;
+}
+
+.what-we-offer {
+    text-align: center;
+    padding: 4em 0;
+    background-color: rgb(138, 16, 41);
+    color: white;
+}
+
+.what-we-offer > p {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.2em;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+}
+
+.box {
+    width: 70%;
+    background-color: black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.box p {
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: capitalize;
 }
 
 @media (min-width: 600px) {
@@ -41,6 +78,24 @@
 
     .hero-button {
         font-size: 1.5em;
+    }
+
+    .what-we-offer {
+        padding: 4em 3em;
+    }
+
+    .what-we-offer > p {
+        font-size: 3em;
+    }
+
+    .box-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .box {
+        flex: 1 1 40%;
     }
 }
 
@@ -56,11 +111,29 @@
     .hero-button {
         font-size: 1.7em;
     }
+
+    .what-we-offer {
+        padding: 4em 3em;
+    }
+
+    .what-we-offer > p {
+        font-size: 3em;
+    }
+
+    .box-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .box {
+        flex: 1 1 30%;
+    }
 }
 
 @media (hover: hover) {
     .hero-button:hover {
-        background-color: white;
-        color: black;
+        background-color: rgb(115, 0, 20);
+        color: white;
     }
 }

@@ -12,7 +12,7 @@ class GymUser(auth_models.AbstractUser):
 
     username = None
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'email'git
 
     REQUIRED_FIELDS = []
 
