@@ -1,3 +1,5 @@
+/* Hero section */
+
 .hero {
     min-height: 30vh;
     background-image: linear-gradient(
@@ -30,44 +32,36 @@
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     font-size: 1.2em;
-    transition: 0.3s ease-in;
 }
+
+/* What we offer section */
 
 .what-we-offer {
     text-align: center;
     padding: 4em 0;
-    background-color: rgb(138, 16, 41);
+    background-color: var(--special-red);
     color: white;
 }
 
 .what-we-offer > p {
-    font-size: 3em;
-    font-weight: bold;
-    text-transform: uppercase;
     margin-bottom: 1.2em;
 }
 
-.box-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    align-items: center;
-}
-
-.box {
-    width: 70%;
+.perk-box {
     background-color: black;
-    border-radius: 5px;
-    overflow: hidden;
 }
 
-.box p {
+.perk-box p {
     font-size: 1.5em;
     text-align: center;
     text-transform: capitalize;
 }
 
+/* Tablet */
+
 @media (min-width: 600px) {
+    /* Hero section */
+
     .hero {
         min-height: 50vh;
     }
@@ -80,26 +74,22 @@
         font-size: 1.5em;
     }
 
+    /* What we offer section */
+
     .what-we-offer {
         padding: 4em 3em;
     }
 
-    .what-we-offer > p {
-        font-size: 3em;
-    }
-
-    .box-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .box {
-        flex: 1 1 40%;
+    .perk-box {
+        flex-basis: 40%;
     }
 }
 
+/* Desktop */
+
 @media (min-width: 1100px) {
+    /* Hero section */
+
     .hero {
         min-height: 100vh;
     }
@@ -112,28 +102,16 @@
         font-size: 1.7em;
     }
 
-    .what-we-offer {
-        padding: 4em 3em;
-    }
+    /* What we offer section */
 
-    .what-we-offer > p {
-        font-size: 3em;
-    }
-
-    .box-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .box {
-        flex: 1 1 30%;
+    .perk-box {
+        flex-basis: 30%;
     }
 }
 
 @media (hover: hover) {
     .hero-button:hover {
-        background-color: rgb(115, 0, 20);
+        background-color: var(--hover-red);
         color: white;
     }
 }

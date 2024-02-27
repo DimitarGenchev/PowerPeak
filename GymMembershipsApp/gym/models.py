@@ -12,7 +12,7 @@ class GymUser(auth_models.AbstractUser):
 
     username = None
 
-    USERNAME_FIELD = 'email'git
+    USERNAME_FIELD = 'email'
 
     REQUIRED_FIELDS = []
 
@@ -22,6 +22,10 @@ UserModel = get_user_model()
 
 class MembershipType(models.Model):
     name = models.CharField(
+        max_length=30,
+    )
+
+    display_name = models.CharField(
         max_length=30,
     )
 
