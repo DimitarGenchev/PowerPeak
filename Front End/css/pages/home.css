@@ -1,7 +1,7 @@
 /* Hero section */
 
 .hero {
-    min-height: 30vh;
+    min-height: 40vh;
     background-image: linear-gradient(
         rgb(0, 0, 0, 0.5),
         rgb(0, 0, 0, 0.5)
@@ -80,8 +80,21 @@
         padding: 4em 3em;
     }
 
+    .perks-container {
+        align-items: stretch;
+    }
+
     .perk-box {
         flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .perk-box p {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
