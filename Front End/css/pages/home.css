@@ -17,7 +17,7 @@
 
 .hero-text {
     max-width: 70%;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
     text-align: center;
 }
@@ -48,7 +48,7 @@
 }
 
 .perk-box {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 .perk-box p {
@@ -125,6 +125,18 @@
 @media (hover: hover) {
     .hero-button:hover {
         background-color: var(--hover-red);
-        color: white;
+        color: rgb(255, 255, 255);
     }
+}
+
+/* Testimonials section */
+
+#index-testimonials {
+    border-top: 2px solid var(--special-grey);
+}
+
+/* Contacts section */
+
+#index-contacts {
+    border-top: 2px solid var(--special-grey);
 }

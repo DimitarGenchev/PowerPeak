@@ -10,7 +10,7 @@
     display: block;
     text-decoration: none;
     background-color: rgb(138, 16, 41);
-    color: white;   
+    color: rgb(255, 255, 255);
     padding-top: 0.7em;
     padding-bottom: 0.7em;
     text-align: center;
@@ -83,7 +83,7 @@
     padding-top: calc(6.1em + 1.45px);
     font-size: 1.2em;
     background-color: rgb(35, 35, 35);
-    border-left: 1.5px solid black;
+    border-left: 1.5px solid rgb(0, 0, 0);
     -webkit-font-smoothing: antialiased;
     margin: 0;
     transform-origin: 100% 0%;
@@ -124,6 +124,6 @@
 
 @media (hover: hover) {
     .main-nav a:hover {
-        background-color: rgb(115, 0, 20);
+        background-color: var(--hover-red);
     }
 }

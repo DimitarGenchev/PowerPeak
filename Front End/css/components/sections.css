@@ -7,10 +7,6 @@
     text-align: center;
 }
 
-.prices > p {
-    margin-bottom: 1.2em;
-}
-
 .prices-container {
     margin-bottom: 4em;
 }
@@ -63,7 +59,7 @@
 
 /* Desktop */
 
-@media (min-width: 1100px) {
+@media (min-width: 1300px) {
     .price-box {
         flex-basis: 20%;
     }
@@ -83,11 +79,6 @@
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     text-align: center;
-    border-top: 2px solid rgb(45, 45, 45);
-}
-
-.testimonials > p {
-    margin-bottom: 1.2em;
 }
 
 .testimonial-box {
@@ -147,5 +138,87 @@
 
     .testimonial-text {
         flex-grow: 1;
+    }
+}
+
+/* Contacts section */
+
+.contacts {
+    padding: 4em 0;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+    border: 2px solid var(--hover-red);
+}
+
+.contacts-container {
+    margin-bottom: 4em;
+}
+
+.contacts-button {
+    font-size: 1.5em;
+    border: 2px solid var(--special-red);
+}
+
+.contact-picture {
+    height: 3em;
+    fill: var(--special-red);
+    line-height: 1;
+}
+
+.contact-type {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.contact-value {
+    font-size: 1.4em;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    .contacts {
+        padding: 4em 3em;
+    }
+
+    .contact-box {
+        flex-basis: 100%;
+    }
+}
+
+@media (min-width: 700px) {
+    .contacts-container {
+        align-items: stretch;
+    }
+
+    .contact-box {
+        flex-basis: 40%;
+    }
+
+    .contact-type {
+        flex-grow: 1;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1500px) {
+    .contact-box {
+        flex-basis: 20%;
+    }
+}
+
+@media (hover: hover) {
+    .contacts-button:hover {
+        background-color: var(--special-red);
     }
 }
