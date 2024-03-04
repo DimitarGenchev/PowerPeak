@@ -140,3 +140,7 @@
 #index-contacts {
     border-top: 2px solid var(--special-grey);
 }
+
+#index-contacts .contacts-container {
+    margin-bottom: 4em;
+}

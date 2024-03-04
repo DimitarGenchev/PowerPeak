@@ -1,0 +1,52 @@
+/* Our story section */
+
+.our-story {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+@media (min-width: 1100px) {
+
+}
+
+/* Our mission section */
+
+.our-mission {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-top: 2px solid rgb(175, 166, 166);
+}
+
+.mission-text {
+    order: -1;
+}
+
+.mission-text p:nth-child(2) {
+    margin-bottom: 2em;
+}
+
+.mission-button {
+    font-size: 1.3em;
+    background-color: var(--special-red);
+}
+
+/* Desktop */
+
+@media (min-width: 1100px) {
+    .our-mission .text {
+        order: 0;
+    }
+}
+
+@media (hover: hover) {
+    .mission-button:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
+}
+
+/* Contacts section */
+
+#about-contacts {
+    border-top: 2px solid rgb(175, 166, 166);
+}
