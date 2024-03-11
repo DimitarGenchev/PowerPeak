@@ -1,33 +1,16 @@
-from django.contrib.auth import get_user_model, login
-from django.contrib.auth import views as auth_views
-from django.urls import reverse_lazy
+from django.contrib.auth import get_user_model
 
 from django.views import generic as views
 
-from GymMembershipsApp.gym.forms import UserRegisterForm
+from GymMembershipsApp.gym.models import MembershipType
 
 UserModel = get_user_model()
 
 
-class IndexView(views.TemplateView):
+class IndexView(views.ListView):
     template_name = 'index.html'
+    model = MembershipType
 
 
-class UserRegisterView(views.CreateView):
-    form_class = UserRegisterForm
-    template_name = 'register.html'
-    success_url = reverse_lazy('index')
-
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        login(self.request, self.object)
-
-        return response
-
-
-class UserLoginView(auth_views.LoginView):
-    template_name = 'login.html'
-
-
-class UserLogoutView(auth_views.LogoutView):
-    ...
+class AboutView(views.TemplateView):
+    template_name = 'about.html'

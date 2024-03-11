@@ -1,20 +1,8 @@
 from dateutil.relativedelta import relativedelta
-from django.contrib.auth import models as auth_models, get_user_model
+from django.contrib.auth import get_user_model
 from django.db import models
 
 from GymMembershipsApp.gym.utils import determine_membership_price
-
-
-class GymUser(auth_models.AbstractUser):
-    email = models.EmailField(
-        unique=True,
-    )
-
-    username = None
-
-    USERNAME_FIELD = 'email'
-
-    REQUIRED_FIELDS = []
 
 
 UserModel = get_user_model()

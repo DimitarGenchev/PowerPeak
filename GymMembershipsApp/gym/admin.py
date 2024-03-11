@@ -1,12 +1,5 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-
-from GymMembershipsApp.gym.models import Membership, Category, Product, Brand, MembershipType, GymUser
-
-
-@admin.register(GymUser)
-class GymUserAdmin(admin.ModelAdmin):
-    fields = ['first_name', 'last_name', 'email']
+from GymMembershipsApp.gym.models import Membership, Category, Product, Brand, MembershipType
 
 
 @admin.register(Membership)

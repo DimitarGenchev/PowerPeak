@@ -1,128 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('base/variables.css');
 
-* {
-    margin: 0;
-    padding: 0;
-}
+@import url('base/reset.css');
+@import url('base/typography.css');
 
-html {
-    font: 16px/1.5 Merriweather;
-    color: #D9534F;
-    box-sizing: border-box;
-}
+@import url('site/site-layout.css');
 
-body {
+@import url('site/site-header.css');
+@import url('site/site-footer.css');
 
-}
+@import url('elements/buttons.css');
+@import url('elements/spans.css');
+@import url('elements/titles.css');
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+@import url('components/navigation.css');
+@import url('components/flex-boxes.css');
+@import url('components/sections.css');
 
-img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-form {
-    flex: 0 0 20%;
-    background-color: black;
-    border-radius: 1em;
-    padding: 2em;
-}
-
-label {
-    display: block;
-    font-size: 1.2em;
-    margin-bottom: 0.2em;
-}
-
-button {
-    margin-top: 1em;
-    padding: 0.3em 0;
-    width: 100%;
-    background-color: #FFFF;
-    font-size: 1.2em;
-}
-
-input {
-    display: block;
-    margin-bottom: 0.3em;
-    width: 100%;
-    height: 1.5em;
-    font-size: 1.2em;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    min-height: 100vh;
-}
-
-.container header {
-    flex-basis: 120px;
-    background-color: black;
-}
-
-.container main {
-    flex-grow: 1;
-    display: flex;
-    align-items: flex-start;
-    padding: 0 2em;
-}
-
-.container footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 50px;
-    background-color: black;
-}
-
-.container header nav {
-    height: 100%;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1em;
-}
-
-.container header nav .logo {
-    flex: 0 0 250px;
-    display: flex;
-    align-items: center;
-    transition: 0.3s ease-in;
-}
-
-.container header nav .logo:hover {
-    flex-basis: 240px;
-}
-
-.container header nav ul {
-    display: flex;
-    justify-content: space-between;
-    gap: 1em;
-    list-style: none outside;
-}
-
-.container header nav .logo a {
-    display: block;
-}
-
-.container header nav ul li a {
-    background-color: #D9534F;
-    color: black;
-    border-radius: 0.4em;
-    padding: 0.3em;
-    font-size: 1.3em;
-    transition: 0.3s ease-in;
-}
-
-.container header nav ul li a:hover {
-    background-color: #B02B27;
-    color: white;
-}
+@import url('pages/about.css');
+@import url('pages/home.css');
+@import url('pages/login.css');
+@import url('pages/prices.css');
+@import url('pages/products.css');
+@import url('pages/profile.css');
+@import url('pages/register.css');

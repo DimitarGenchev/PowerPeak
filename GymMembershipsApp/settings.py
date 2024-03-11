@@ -20,7 +20,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
 
 MY_APPS = [
-    'GymMembershipsApp.gym'
+    'GymMembershipsApp.gym',
+    'GymMembershipsApp.users',
 ]
 
 INSTALLED_APPS = [
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'formtools',
 ] + MY_APPS
 
 MIDDLEWARE = [
@@ -118,7 +120,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-AUTH_USER_MODEL = 'gym.GymUser'
+AUTH_USER_MODEL = 'users.GymUser'
+AUTHENTICATION_BACKENDS = ['GymMembershipsApp.users.backends.EmailBackend']
 
 LOGIN_URL = reverse_lazy('login user')
 LOGIN_REDIRECT_URL = reverse_lazy('index')

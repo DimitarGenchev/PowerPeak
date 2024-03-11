@@ -2,17 +2,21 @@
 
 {% block content %}
     <form method="post" action="{% url 'register user' %}">
-        <label for="{{ form.email.id_for_label }}">Email:</label>
-        {{ form.email }}
-
-        <label for="{{ form.password1.id_for_label }}">Password:</label>
-        {{ form.password1 }}
-
-        <label for="{{ form.password2.id_for_label }}">Confirm password:</label>
-        {{ form.password2 }}
-
-        <button type="submit">Register</button>
-
         {% csrf_token %}
+        {{ wizard.management_form }}
+        {{ wizard.form.management_form }}
+    
+        {% for field in wizard.form %}
+            {{ field.label_tag }}
+            {{ field }}
+            <br>
+        {% endfor %}
+    
+        {% if wizard.steps.prev %}
+            <button type="submit" name="wizard_goto_step" value="{{ wizard.steps.prev }}" formnovalidate>Previous</button>
+        {% endif %}
+        <button type="submit">Next</button>
+    
+        Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
     </form>
 {% endblock %}

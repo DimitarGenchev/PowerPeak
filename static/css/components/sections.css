@@ -1,0 +1,220 @@
+/* Membership prices section */
+
+.prices {
+    padding: 4em 0;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+}
+
+.prices-container {
+    margin-bottom: 4em;
+}
+
+.prices-button {
+    font-size: 1.5em;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.price-box {
+    padding: 2em;
+    background-color: var(--special-red);
+}
+
+.membership-type {
+    font-size: 2em;
+    padding-bottom: 0.1em;
+}
+
+.membership-duration {
+    font-size: 1.3em;
+    padding-bottom: 1em;
+}
+
+.membership-price {
+    font-size: 2.8em;
+    font-weight: bold;
+}
+
+/* Mid-tier mobile */
+
+@media (min-width: 349px) and (max-width: 385px) {
+    .prices > p {
+        font-size: 2.6em;
+    }
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    .prices {
+        padding: 4em 3em;
+    }
+
+    .price-box {
+        flex-basis: 40%;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1300px) {
+    .price-box {
+        flex-basis: 20%;
+    }
+}
+
+@media (hover: hover) {
+    .prices-button:hover {
+        background-color: var(--hover-red);
+        color: rgb(255, 255, 255);
+    }
+}
+
+/* Testimonials section */
+
+.testimonials {
+    padding: 4em 0;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.testimonial-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding: 2.5em;
+    background-color: rgb(53, 53, 53);
+}
+
+.testimonial-picture {
+    width: 15em;
+    border-radius: 50%;
+}
+
+.testimonial-text {
+    font-size: 1.3em;
+}
+
+.testimonial-rating {
+    display: flex;
+}
+
+.testimonial-rating svg {
+    width: 1.8em;
+    fill: var(--special-red);
+}
+
+.testimonial-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    .testimonials {
+        padding: 4em 3em;
+    }
+
+    .testimonial-box {
+        flex-basis: 100%;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1100px) {
+    .testimonials-container {
+        align-items: stretch;
+    }
+
+    .testimonial-box {
+        flex-basis: 30%;
+    }
+
+    .testimonial-text {
+        flex-grow: 1;
+    }
+}
+
+/* Contacts section */
+
+.contacts {
+    padding: 4em 0;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+    border: 2px solid var(--hover-red);
+}
+
+.contacts-button {
+    font-size: 1.5em;
+    border: 2px solid var(--special-red);
+}
+
+.contact-picture {
+    height: 3em;
+    fill: var(--special-red);
+    line-height: 1;
+}
+
+.contact-type {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.contact-value {
+    font-size: 1.4em;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    .contacts {
+        padding: 4em 3em;
+    }
+
+    .contact-box {
+        flex-basis: 100%;
+    }
+}
+
+@media (min-width: 700px) {
+    .contacts-container {
+        align-items: stretch;
+    }
+
+    .contact-box {
+        flex-basis: 40%;
+    }
+
+    .contact-type {
+        flex-grow: 1;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1500px) {
+    .contact-box {
+        flex-basis: 20%;
+    }
+}
+
+@media (hover: hover) {
+    .contacts-button:hover {
+        background-color: var(--special-red);
+    }
+}

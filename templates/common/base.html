@@ -4,22 +4,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PowerPeak Gym</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPeak</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'media/images/logo.png' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div class="site-container">
+        <header class="site-header">
+            <div class="site-logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'media/images/logo-long.png' %}" alt="Logo">
+                </a>
+            </div>
+
             {% include 'common/partials/nav.html' %}
         </header>
 
-        <main>
+        <main class="site-main">
             {% block content %}
             {% endblock %}
         </main>
 
-        <footer>
+        <footer class="site-footer">
             <p>&copy; 2024 PowerPeak Gym. All rights reserved.</p>
         </footer>
     </div>
