@@ -29,7 +29,7 @@
     
 }
 
-/* Flex box for section with just text and image */
+/* Flex box for section with only text and image */
 
 .box-container-text-img {
     display: flex;
@@ -40,12 +40,6 @@
 
 .text {
     padding: 0 2.5em 0 2.5em;
-}
-
-.text p:first-child {
-    display: inline-block;
-    padding-bottom: 0.4em;
-    border-bottom: 3px solid var(--special-red);
 }
 
 .text > p:nth-child(2) {
