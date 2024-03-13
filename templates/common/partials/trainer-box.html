@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="box trainer-box">
+    <img src="{{ trainer.trainer_picture.url }}" alt="{{ trainer }}" class="trainer-picture">
+
+    <div class="trainer-text">
+        <p class="trainer-name">{{ trainer }}</p>
+
+        <p class="trainer-type">{{ trainer.get_trainer_type_display }}</p>
+    </div>
+</div>

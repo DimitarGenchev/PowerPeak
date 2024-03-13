@@ -129,6 +129,38 @@
     }
 }
 
+/* Membership prices section */
+
+#index-prices .prices-container {
+    margin-bottom: 4em;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    #index-prices .prices-container {
+        align-items: stretch;
+    }
+
+    #index-prices .price-box {
+        flex-grow: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #index-prices .membership-price {
+        margin-top: auto;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1300px) {
+    #index-prices .price-box {
+        flex-grow: 1;
+    }    
+}
+
 /* Testimonials section */
 
 #index-testimonials {

@@ -7,10 +7,6 @@
     text-align: center;
 }
 
-.prices-container {
-    margin-bottom: 4em;
-}
-
 .prices-button {
     font-size: 1.5em;
     background-color: rgb(255, 255, 255);
@@ -41,7 +37,7 @@
 /* Mid-tier mobile */
 
 @media (min-width: 349px) and (max-width: 385px) {
-    .prices > p {
+    .prices .section-title {
         font-size: 2.6em;
     }
 }

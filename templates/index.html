@@ -52,16 +52,16 @@
         </div>
     </section>
 
-    <section class="prices">
+    <section class="prices" id="index-prices">
         <p class="section-title">Membership prices</p>
 
         <div class="box-container prices-container">
             {% for membershiptype in object_list %}
-                {% include 'common/partials/price-box.html' with membershiptype=membershiptype %}
+                {% include 'common/partials/price-box-single.html' with membershiptype=membershiptype %}
             {% endfor %}
         </div>
 
-        <a href="#" class="button prices-button">See all prices</a>
+        <a href="{% url 'prices' %}" class="button prices-button">See all prices</a>
     </section>
 
     <section class="testimonials" id="index-testimonials">

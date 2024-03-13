@@ -1,5 +1,5 @@
 from django.contrib import admin
-from GymMembershipsApp.gym.models import Membership, Category, Product, Brand, MembershipType
+from GymMembershipsApp.gym.models import Membership, Category, Product, Brand, MembershipType, Trainer
 
 
 @admin.register(Membership)
@@ -25,4 +25,9 @@ class BrandAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    ...
+
+
+@admin.register(Trainer)
+class TrainerAdmin(admin.ModelAdmin):
     ...

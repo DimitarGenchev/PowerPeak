@@ -13,13 +13,25 @@
                     thriving community hub for health and wellness.</p>
             </div>
 
-            <img src="{% static 'media/images/dumbbell-rack1.jpg' %}" alt="Story Picture" class="picture" id="story-picture">
+            <img src="{% static 'media/images/dumbbell-rack1.jpg' %}" alt="Story Picture" class="picture"
+                 id="story-picture">
+        </div>
+    </section>
+
+    <section class="trainers">
+        <p class="section-title">Trainers</p>
+
+        <div class="box-container trainers-container">
+            {% for trainer in object_list %}
+                {% include 'common/partials/trainer-box.html' with trainer=trainer %}
+            {% endfor %}
         </div>
     </section>
 
     <section class="our-mission">
         <div class="box-container-text-img">
-            <img src="{% static 'media/images/deadlift.jpg' %}" alt="Mission Picture" class="picture" id="mission-picture">
+            <img src="{% static 'media/images/deadlift.jpg' %}" alt="Mission Picture" class="picture"
+                 id="mission-picture">
 
             <div class="text mission-text">
                 <p class="section-title">Our Mission</p>
@@ -76,6 +88,14 @@
 
                 <p class="contact-value">24/7</p>
             </div>
+        </div>
+    </section>
+
+    <section class="map" id="map">
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d739.5295497188849!2d24.732802869686573!3d42.147757398200795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd1c6604ff539%3A0xf68005cbe1a9ce44!2sTsentarPlovdiv%20Center%2C%20bul.%20%226-ti%20septemvri%22%20110%D0%90%2C%204020%20Plovdiv!5e0!3m2!1sen!2sbg!4v1710167635755!5m2!1sen!2sbg"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 {% endblock %}

@@ -1,9 +1,10 @@
 from dateutil.relativedelta import relativedelta
 from django.contrib.auth import get_user_model
+from django.core.validators import MinLengthValidator
 from django.db import models
 
 from GymMembershipsApp.gym.utils import determine_membership_price
-
+from GymMembershipsApp.users.validators import validate_name_contains_alphabet_only
 
 UserModel = get_user_model()
 
@@ -139,4 +140,45 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.brand}'
+
+
+class Trainer(models.Model):
+    class TrainerTypeChoices(models.TextChoices):
+        BODYBUILDING = 'bodybuilding', 'Bodybuilding'
+        STRENGTH_TRAINING = 'strength training', 'Strength training'
+        CALISTHENICS = 'calisthenics', 'Calisthenics'
+        CARDIO = 'cardio', 'Cardio'
+        CROSSFIT = 'crossfit', 'Crossfit'
+
+    first_name = models.CharField(
+        max_length=50,
+        validators=[
+            MinLengthValidator(2),
+            validate_name_contains_alphabet_only,
+        ],
+    )
+
+    last_name = models.CharField(
+        max_length=50,
+        validators=[
+            MinLengthValidator(2),
+            validate_name_contains_alphabet_only,
+        ],
+    )
+
+    description = models.TextField(
+
+    )
+
+    trainer_type = models.CharField(
+        max_length=20,
+        choices=TrainerTypeChoices.choices,
+    )
+
+    trainer_picture = models.ImageField(
+        upload_to='trainer_pictures',
+    )
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
 
