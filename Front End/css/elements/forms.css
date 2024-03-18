@@ -1,0 +1,15 @@
+input {
+    border-radius: 3px;
+    border: none;
+    padding: 0.5em;
+}
+
+input:enabled {
+    outline: none;
+}
+
+select {
+    border-radius: 7px;
+    border: 0;
+    padding: 0.5em;
+}

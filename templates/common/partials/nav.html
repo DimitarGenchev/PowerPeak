@@ -12,11 +12,11 @@
             <li><a href="{% url 'index' %}">Home</a></li>
             <li><a href={% url 'about' %}>About</a></li>
             <li><a href="{% url 'prices' %}">Prices</a></li>
-            <li><a href="#">Products</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
 
             {% if request.user.is_authenticated %}
                 {% if request.user.is_staff %}
-                    <li><a href="admin/">Administration</a></li>
+                    <li><a href="{% url 'admin:index' %}">Administration</a></li>
                 {% endif %}
 
                 <li><a href="#">Profile</a></li>
@@ -26,9 +26,9 @@
                 <li><a href="{% url 'login user' %}">Login</a></li>
             {% endif %}
         </ul>
-
-        <form id="logout-form" method="post" action="{% url 'logout user' %}" style="display: none;">
-            {% csrf_token %}
-        </form>
     </div>
 </nav>
+
+<form id="logout-form" method="post" action="{% url 'logout user' %}" style="display: none;">
+    {% csrf_token %}
+</form>

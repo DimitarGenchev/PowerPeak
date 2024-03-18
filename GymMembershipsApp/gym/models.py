@@ -138,6 +138,10 @@ class Product(models.Model):
         decimal_places=2,
     )
 
+    product_picture = models.ImageField(
+        upload_to='product_pictures/',
+    )
+
     def __str__(self):
         return f'{self.name} - {self.brand}'
 
@@ -176,7 +180,7 @@ class Trainer(models.Model):
     )
 
     trainer_picture = models.ImageField(
-        upload_to='trainer_pictures',
+        upload_to='trainer_pictures/',
     )
 
     def __str__(self):
