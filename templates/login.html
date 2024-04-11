@@ -1,9 +1,25 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-    <form method="post" action="{% url 'login user' %}">
-        {{ form }}
-        <button type="submit">Login</button>
-        {% csrf_token %}
-    </form>
+    <section class="login">
+        <p class="section-title">Login</p>
+
+        <form class="login-form" method="post" action="{% url 'login user' %}">
+            <p class="welcome-message">Welcome back!</p>
+
+            <div>
+                {{ form.username }}
+            </div>
+
+            <div>
+                {{ form.password }}
+            </div>
+
+            <button class="login-button" type="submit">Login</button>
+
+            <p class="no-account">Don't have an account? <span><a href="{% url 'register user' %}">Register</a></span></p>
+
+            {% csrf_token %}
+        </form>
+    </section>
 {% endblock %}

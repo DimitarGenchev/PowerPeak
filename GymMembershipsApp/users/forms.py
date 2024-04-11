@@ -43,3 +43,25 @@ class UserDetailsForm(forms.ModelForm):
     class Meta:
         model = UserModel
         fields = ['first_name', 'last_name', 'date_of_birth', 'phone_number']
+
+
+class UserLoginForm(auth_forms.AuthenticationForm):
+    username = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={
+                'autofocus': True,
+                'placeholder': 'Email',
+                'name': 'email',
+            }
+        ),
+    )
+
+    password = forms.CharField(
+        strip=False,
+        widget=forms.PasswordInput(
+            attrs={
+                'autocomplete': 'current-password',
+                'placeholder': 'Password',
+            },
+        ),
+    )

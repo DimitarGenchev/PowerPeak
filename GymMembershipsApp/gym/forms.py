@@ -14,23 +14,21 @@ class ProductsFilterForm(forms.Form):
         required=False,
     )
 
-    product_category = forms.ChoiceField(
+    category = forms.ChoiceField(
         choices=[('', 'Category')] + [(cat.id, cat.name) for cat in Category.objects.all()],
         widget=forms.Select(
             attrs={
-                'id': 'product-types-input',
-                'name': 'search-by-product-type',
+                'id': 'product-category-input',
             },
         ),
         required=False,
     )
 
-    product_brand = forms.ChoiceField(
+    brand = forms.ChoiceField(
         choices=[('', 'Brand')] + [(brand.id, brand.name) for brand in Brand.objects.all()],
         widget=forms.Select(
             attrs={
-                'id': 'product-brands-input',
-                'name': 'search-by-product-brand',
+                'id': 'product-brand-input',
             },
         ),
         required=False,

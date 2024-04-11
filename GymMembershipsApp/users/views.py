@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic as views
 from formtools.wizard.views import SessionWizardView
 
-from GymMembershipsApp.users.forms import UserRegisterForm, UserDetailsForm
+from GymMembershipsApp.users.forms import UserRegisterForm, UserDetailsForm, UserLoginForm
 
 UserModel = get_user_model()
 
@@ -35,6 +35,7 @@ class UserRegisterWizardView(SessionWizardView):
 
 class UserLoginView(auth_views.LoginView):
     template_name = 'login.html'
+    form_class = UserLoginForm
 
 
 class UserLogoutView(auth_views.LogoutView):

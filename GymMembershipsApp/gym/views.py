@@ -39,16 +39,16 @@ class ProductsView(views.ListView):
         queryset = super().get_queryset()
 
         search = self.request.GET.get('search')
-        product_category = self.request.GET.get('product_category')
-        product_brand = self.request.GET.get('product_brand')
+        product_category = self.request.GET.get('category')
+        product_brand = self.request.GET.get('brand')
 
-        if search != '':
+        if search != '' and search is not None:
             queryset = queryset.filter(name__icontains=search)
 
-        if product_category != '':
+        if product_category != '' and product_category is not None:
             queryset = queryset.filter(category_id=product_category)
 
-        if product_brand != '':
+        if product_brand != '' and product_brand is not None:
             queryset = queryset.filter(brand_id=product_brand)
 
         return queryset
