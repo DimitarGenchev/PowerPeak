@@ -34,6 +34,13 @@ class UserRegisterForm(auth_forms.UserCreationForm):
         model = UserModel
         fields = ['email', 'password1', 'password2']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['email'].widget.attrs['placeholder'] = 'Email'
+        self.fields['password1'].widget.attrs['placeholder'] = 'Password'
+        self.fields['password2'].widget.attrs['placeholder'] = 'Confirm password'
+
 
 class UserDetailsForm(forms.ModelForm):
     date_of_birth = CustomDateField(
@@ -43,6 +50,13 @@ class UserDetailsForm(forms.ModelForm):
     class Meta:
         model = UserModel
         fields = ['first_name', 'last_name', 'date_of_birth', 'phone_number']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['first_name'].widget.attrs['placeholder'] = 'First name'
+        self.fields['last_name'].widget.attrs['placeholder'] = 'Last name'
+        self.fields['phone_number'].widget.attrs['placeholder'] = 'Phone number'
 
 
 class UserLoginForm(auth_forms.AuthenticationForm):

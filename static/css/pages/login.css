@@ -6,23 +6,18 @@
     background-color: var(--special-red);
 }
 
-.login .section-title {
-    display: inline-block;
-}
-
 .login-form {
-    font-size: 1.2em;
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0);
     margin: 0 auto;
-    width: 20em;
-    padding: 1em;
+    width: 25em;
+    padding: 1em 1.8em;
     border-radius: 15px;
     box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.4);
 }
 
 .welcome-message {
-    font-size: 1.5em;
+    font-size: 2em;
     margin-bottom: 0.8em;
     font-weight: bold;
 }
@@ -32,13 +27,15 @@
 }
 
 .login-form input {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    width: 100%;
     padding: 0.3em;
     border-radius: 5px;
 }
 
 .login-button {
-    font-size: 1.2em;
+    width: 100%;
+    font-size: 1.1em;
     padding: 0.3em;
     margin-bottom: 1.5em;
     margin-top: 0.5em;
@@ -49,7 +46,7 @@
 }
 
 .no-account {
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .no-account span {
@@ -61,8 +58,7 @@
 
 @media (hover: hover) {
     .login-button:hover {
-        background-color: var(--special-red);
-        color: rgb(255, 255, 255);
+        background-color: rgb(214, 214, 214);
     }
 
     .no-account span:hover {
