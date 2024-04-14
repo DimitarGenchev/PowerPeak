@@ -40,3 +40,7 @@ class UserLoginView(auth_views.LoginView):
 
 class UserLogoutView(auth_views.LogoutView):
     ...
+
+
+class UserDetailsView(views.TemplateView):
+    template_name = 'profile.html'

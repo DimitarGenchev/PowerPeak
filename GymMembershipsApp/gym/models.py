@@ -1,6 +1,8 @@
+from datetime import datetime, timezone, date
+
 from dateutil.relativedelta import relativedelta
 from django.contrib.auth import get_user_model
-from django.core.validators import MinLengthValidator
+from django.core.validators import MinLengthValidator, MinValueValidator
 from django.db import models
 
 from GymMembershipsApp.gym.utils import determine_membership_price
@@ -54,7 +56,9 @@ class Membership(models.Model):
     )
 
     start_date = models.DateField(
-        auto_now_add=True,
+        validators=[
+            MinValueValidator(date.today()),
+        ],
     )
 
     end_date = models.DateField(
@@ -79,6 +83,10 @@ class Membership(models.Model):
         UserModel,
         on_delete=models.CASCADE,
     )
+
+    @property
+    def is_active(self):
+        return datetime.now().date() <= self.end_date
 
     def save(self, *args, **kwargs):
         result = super().save(*args, **kwargs)

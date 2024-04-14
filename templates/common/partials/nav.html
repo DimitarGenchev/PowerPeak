@@ -19,7 +19,7 @@
                     <li><a href="{% url 'admin:index' %}">Administration</a></li>
                 {% endif %}
 
-                <li><a href="#">Profile</a></li>
+                <li><a href="{% url 'details user' %}">Profile</a></li>
                 <li><a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a></li>
             {% else %}
                 <li><a href="{% url 'register user' %}">Register</a></li>
