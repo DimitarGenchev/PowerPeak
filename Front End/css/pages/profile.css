@@ -34,7 +34,7 @@
     font-size: 1.2em;
 }
 
-.change-email, .change-password {
+.email-change, .password-change {
     background-color: var(--special-grey);
     padding: 0.5em;
     border-radius: 5px;
@@ -53,7 +53,7 @@
 /* Desktop */
 
 @media (hover: hover) {
-    .change-email:hover, .change-password:hover {
+    .email-change:hover, .password-change:hover {
         background-color: var(--special-red);
     }
 }

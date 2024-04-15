@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic as views
 from formtools.wizard.views import SessionWizardView
 
-from GymMembershipsApp.users.forms import UserRegisterForm, UserDetailsForm, UserLoginForm
+from GymMembershipsApp.users.forms import UserRegisterForm, UserDetailsForm, UserLoginForm, UserChangePasswordForm
 
 UserModel = get_user_model()
 
@@ -42,5 +42,23 @@ class UserLogoutView(auth_views.LogoutView):
     ...
 
 
-class UserDetailsView(views.TemplateView):
+class UserDetailsView(views.ListView):
     template_name = 'profile.html'
+
+    def get_queryset(self):
+        return self.request.user.membership_set.order_by('-start_date')
+
+
+class ChangeUserPasswordView(auth_views.PasswordChangeView):
+    template_name = 'change-password.html'
+    form_class = UserChangePasswordForm
+    success_url = reverse_lazy('details user')
+
+
+class ChangeUserEmailView(views.UpdateView):
+    template_name = 'change-email.html'
+    fields = ['email']
+    success_url = reverse_lazy('details user')
+
+    def get_object(self, queryset=None):
+        return self.request.user

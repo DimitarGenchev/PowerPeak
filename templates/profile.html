@@ -35,9 +35,9 @@
         </div>
 
         <div class="profile-buttons">
-            <p class="change-email"><a href="#">Change email</a></p>
+            <p class="email-change"><a href="{% url 'change user email' %}">Change email</a></p>
 
-            <p class="change-password"><a href="#">Change password</a></p>
+            <p class="password-change"><a href="{% url 'change password user' %}">Change password</a></p>
         </div>
     </section>
 
@@ -45,7 +45,7 @@
         <p class="section-title">My memberships</p>
 
         <div class="memberships-container">
-            {% for membership in request.user.membership_set.all %}
+            {% for membership in object_list %}
             	{% include 'common/partials/membership-box.html' with membership=membership %}
             {% endfor %}
         </div>

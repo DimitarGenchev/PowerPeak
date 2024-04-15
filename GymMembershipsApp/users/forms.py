@@ -79,3 +79,12 @@ class UserLoginForm(auth_forms.AuthenticationForm):
             },
         ),
     )
+
+
+class UserChangePasswordForm(auth_forms.PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['old_password'].widget.attrs['placeholder'] = 'Old password'
+        self.fields['new_password1'].widget.attrs['placeholder'] = 'New password'
+        self.fields['new_password2'].widget.attrs['placeholder'] = 'Confirm new password'
