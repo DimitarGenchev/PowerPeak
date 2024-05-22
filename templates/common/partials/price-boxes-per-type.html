@@ -1,31 +1,58 @@
+{% load i18n %}
+{% get_current_language as lang %}
+
 <div class="box price-box">
-    <p class="membership-type">{{ membershiptype.display_name }}</p>
+    <p class="membership-type">
+        {% if lang == 'bg' %}
+            {{ membershiptype.name_bg }}
+        {% else %}
+            {{ membershiptype.name_en }}
+        {% endif %}
+    </p>
 
-    <p class="membership-duration">1 month</p>
+    <p class="membership-duration">1 {% trans "месец" %}</p>
 
-    <p class="membership-price">{{ membershiptype.price_for_one_month }}<br>BGN</p>
+    <p class="membership-price">{{ membershiptype.price_for_one_month }}<br>{% trans "ЛВ" %}</p>
 </div>
 
 <div class="box price-box">
-    <p class="membership-type">{{ membershiptype.display_name }}</p>
+    <p class="membership-type">
+        {% if lang == 'bg' %}
+            {{ membershiptype.name_bg }}
+        {% else %}
+            {{ membershiptype.name_en }}
+        {% endif %}
+    </p>
 
-    <p class="membership-duration">3 months</p>
+    <p class="membership-duration">3 {% trans "месеца" %}</p>
 
-    <p class="membership-price">{{ membershiptype.price_for_three_months }}<br>BGN</p>
+    <p class="membership-price">{{ membershiptype.price_for_three_months }}<br>{% trans "ЛВ" %}</p>
 </div>
 
 <div class="box price-box">
-    <p class="membership-type">{{ membershiptype.display_name }}</p>
+    <p class="membership-type">
+        {% if lang == 'bg' %}
+            {{ membershiptype.name_bg }}
+        {% else %}
+            {{ membershiptype.name_en }}
+        {% endif %}
+    </p>
 
-    <p class="membership-duration">6 months</p>
+    <p class="membership-duration">6 {% trans "месеца" %}</p>
 
-    <p class="membership-price">{{ membershiptype.price_for_six_months }}<br>BGN</p>
+    <p class="membership-price">{{ membershiptype.price_for_six_months }}<br>{% trans "ЛВ" %}</p>
 </div>
 
 <div class="box price-box">
-    <p class="membership-type">{{ membershiptype.display_name }}</p>
+    <p class="membership-type">
+        {% if lang == 'bg' %}
+            {{ membershiptype.name_bg }}
+        {% else %}
+            {{ membershiptype.name_en }}
+        {% endif %}
+    </p>
 
-    <p class="membership-duration">12 months</p>
+    <p class="membership-duration">12 {% trans "месеца" %}</p>
 
-    <p class="membership-price">{{ membershiptype.price_for_twelve_months }}<br>BGN</p>
+    <p class="membership-price">{{ membershiptype.price_for_twelve_months }}<br>{% trans "ЛВ" %}</p>
 </div>

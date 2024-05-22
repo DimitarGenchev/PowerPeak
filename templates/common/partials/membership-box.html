@@ -1,14 +1,16 @@
-<div class="membership-box {% if not membership.is_active %}expired{% endif %}">
-    <p class="start-date"><span>Start date:</span> {{ membership.start_date|date:"d.m.Y" }}</p>
+{% load i18n %}
 
-    <p class="end-date"><span>End date:</span> {{ membership.end_date|date:"d.m.Y" }}</p>
+<div class="membership-box {% if not membership.is_active %}expired{% endif %}">
+    <p class="start-date"><span>{% trans 'Начална дата' %}:</span> {{ membership.start_date|date:"d.m.Y" }}</p>
+
+    <p class="end-date"><span>{% trans 'Крайна дата' %}:</span> {{ membership.end_date|date:"d.m.Y" }}</p>
 
     <p class="is-active">
         <span>
             {% if membership.is_active %}
-            	Active
+            	{% trans 'Активен' %}
             {% else %}
-                Expired
+                {% trans 'Изтекъл' %}
             {% endif %} 
         </span>
     </p>

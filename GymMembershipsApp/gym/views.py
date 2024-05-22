@@ -1,4 +1,9 @@
+from urllib.parse import urlparse, urlunparse
+
 from django.contrib.auth import get_user_model
+from django.shortcuts import redirect
+
+from django.utils.translation import gettext_lazy as _
 
 from django.views import generic as views
 
@@ -52,3 +57,18 @@ class ProductsView(views.ListView):
             queryset = queryset.filter(brand_id=product_brand)
 
         return queryset
+
+
+def switch_language(request):
+    language = request.LANGUAGE_CODE
+    url = request.META.get('HTTP_REFERER')
+    parsed_url = urlparse(url)
+
+    if language == 'bg':
+        new_path = f'/en{parsed_url.path}'
+    else:
+        new_path = parsed_url.path.replace('/en', '', 1)
+
+    modified_url = urlunparse(parsed_url._replace(path=new_path))
+
+    return redirect(modified_url)

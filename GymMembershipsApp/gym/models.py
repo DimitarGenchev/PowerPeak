@@ -1,6 +1,7 @@
-from datetime import datetime, timezone, date
+from datetime import datetime, date
 
 from dateutil.relativedelta import relativedelta
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator, MinValueValidator
 from django.db import models
@@ -12,11 +13,11 @@ UserModel = get_user_model()
 
 
 class MembershipType(models.Model):
-    name = models.CharField(
+    name_bg = models.CharField(
         max_length=30,
     )
 
-    display_name = models.CharField(
+    name_en = models.CharField(
         max_length=30,
     )
 
@@ -41,15 +42,15 @@ class MembershipType(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return self.name_bg
 
 
 class Membership(models.Model):
     class DurationChoices(models.IntegerChoices):
-        ONE_MONTH = 1, '1 month'
-        THREE_MONTHS = 3, '3 months'
-        SIX_MONTHS = 6, '6 months'
-        TWELVE_MONTHS = 12, '12 months'
+        ONE_MONTH = 1, f'1 {_('месец')}'
+        THREE_MONTHS = 3, f'3 {_('месеца')}'
+        SIX_MONTHS = 6, f'6 {_('месеца')}'
+        TWELVE_MONTHS = 12, f'12 {_('месеца')}'
 
     duration = models.IntegerField(
         choices=DurationChoices.choices,
@@ -88,6 +89,9 @@ class Membership(models.Model):
     def is_active(self):
         return datetime.now().date() <= self.end_date
 
+    def __str__(self):
+        return f'{self.user.first_name} {self.user.last_name} - {self.duration} {_('months')}'
+
     def save(self, *args, **kwargs):
         result = super().save(*args, **kwargs)
 
@@ -101,7 +105,11 @@ class Membership(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(
+    name_bg = models.CharField(
+        max_length=30,
+    )
+
+    name_en = models.CharField(
         max_length=30,
     )
 
@@ -109,20 +117,28 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     def __str__(self):
-        return self.name
+        return self.name_bg
 
 
 class Brand(models.Model):
-    name = models.CharField(
+    name_bg = models.CharField(
+        max_length=30,
+    )
+
+    name_en = models.CharField(
         max_length=30,
     )
 
     def __str__(self):
-        return self.name
+        return self.name_bg
 
 
 class Product(models.Model):
-    name = models.CharField(
+    name_bg = models.CharField(
+        max_length=50,
+    )
+
+    name_en = models.CharField(
         max_length=50,
     )
 
@@ -151,7 +167,7 @@ class Product(models.Model):
     )
 
     def __str__(self):
-        return f'{self.name} - {self.brand}'
+        return f'{self.name_bg} - {self.brand}'
 
 
 class Trainer(models.Model):
@@ -162,7 +178,7 @@ class Trainer(models.Model):
         CARDIO = 'cardio', 'Cardio'
         CROSSFIT = 'crossfit', 'Crossfit'
 
-    first_name = models.CharField(
+    first_name_bg = models.CharField(
         max_length=50,
         validators=[
             MinLengthValidator(2),
@@ -170,7 +186,7 @@ class Trainer(models.Model):
         ],
     )
 
-    last_name = models.CharField(
+    first_name_en = models.CharField(
         max_length=50,
         validators=[
             MinLengthValidator(2),
@@ -178,8 +194,20 @@ class Trainer(models.Model):
         ],
     )
 
-    description = models.TextField(
+    last_name_bg = models.CharField(
+        max_length=50,
+        validators=[
+            MinLengthValidator(2),
+            validate_name_contains_alphabet_only,
+        ],
+    )
 
+    last_name_en = models.CharField(
+        max_length=50,
+        validators=[
+            MinLengthValidator(2),
+            validate_name_contains_alphabet_only,
+        ],
     )
 
     trainer_type = models.CharField(
@@ -192,5 +220,4 @@ class Trainer(models.Model):
     )
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
-
+        return f'{self.first_name_bg} {self.last_name_bg}'

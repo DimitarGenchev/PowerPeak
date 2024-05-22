@@ -1,59 +1,60 @@
 {% extends 'common/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
     <section class="hero">
         <div class="hero-text">
-            <p>Welcome to PowerPeak <span class="red">Gym</span>, Where Your Strength Soars</p>
+            <p>{% trans "Добре дошли в" %} PowerPeak <span class="red">Gym</span></p>
 
-            <a href="#" class="button hero-button">Start Your Fitness Journey</a>
+            <a href="{% url 'about' %}#map" class="button hero-button">{% trans "Започнете вашето фитнес приключение" %}</a>
         </div>
     </section>
 
     <section class="what-we-offer">
-        <p class="section-title">What we offer</p>
+        <p class="section-title">{% trans "Какво предлагаме" %}</p>
 
         <div class="box-container perks-container">
             <div class="box perk-box">
                 <img src="{% static 'media/images/gym-equipment.jpg' %}" alt="Gym Equipment">
 
-                <p>High quality equipment</p>
+                <p>{% trans "Висококачествено оборудване" %}</p>
             </div>
 
             <div class="box perk-box">
                 <img src="{% static 'media/images/diverse-classes.jpg' %}" alt="Diverse Classes">
 
-                <p>Diverse classes</p>
+                <p>{% trans "Разнообразни занятия" %}</p>
             </div>
 
             <div class="box perk-box">
                 <img src="{% static 'media/images/personal-training.jpg' %}" alt="Personal Training">
 
-                <p>Personal training</p>
+                <p>{% trans "Лични треньори" %}</p>
             </div>
 
             <div class="box perk-box">
                 <img src="{% static 'media/images/nutrition-counseling.jpg' %}" alt="Nutrition Counseling">
 
-                <p>Nutrition counseling</p>
+                <p>{% trans "Изготвяне на хранителни режими" %}</p>
             </div>
 
             <div class="box perk-box">
                 <img src="{% static 'media/images/protein-bar.jpg' %}" alt="Snacks and Beverages">
 
-                <p>High quality snacks and beverages</p>
+                <p>{% trans "Висококачествени протеинови продукти" %}</p>
             </div>
 
             <div class="box perk-box">
                 <img src="{% static 'media/images/locker.jpg' %}" alt="Snacks and Beverages">
 
-                <p>Locker</p>
+                <p>{% trans "Шкафче" %}</p>
             </div>
         </div>
     </section>
 
     <section class="prices" id="index-prices">
-        <p class="section-title">Membership prices</p>
+        <p class="section-title">{% trans "Цени на абонаменти" %}</p>
 
         <div class="box-container prices-container">
             {% for membershiptype in object_list %}
@@ -61,18 +62,19 @@
             {% endfor %}
         </div>
 
-        <a href="{% url 'prices' %}" class="button prices-button">See all prices</a>
+        <a href="{% url 'prices' %}" class="button prices-button">{% trans "Виж всички цени" %}</a>
     </section>
 
     <section class="testimonials" id="index-testimonials">
-        <p class="section-title">Our clients</p>
+        <p class="section-title">{% trans "Нашите клиенти" %}</p>
 
         <div class="box-container testimonials-container">
             <div class="box testimonial-box">
                 <img src="{% static 'media/images/testimonial1.jpg' %}" alt="Person Picture" class="testimonial-picture">
 
-                <p class="testimonial-text">"Joining PowerPeak Gym was the best decision I ever made! The atmosphere is
-                    motivating, the trainers are knowledgeable, and I've seen incredible results."</p>
+                <p class="testimonial-text">
+                    {% trans "„Присъединяването към PowerPeak Gym беше най-доброто решение, което някога съм вземала! Атмосферата е мотивираща, треньорите са опитни и постинах невероятни резултати.“" %}
+                </p>
 
                 <div class="testimonial-rating">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -92,14 +94,15 @@
                     </svg>
                 </div>
 
-                <p class="testimonial-name">Sarah W.</p>
+                <p class="testimonial-name">{% trans "Мария А." %}</p>
             </div>
 
             <div class="box testimonial-box">
                 <img src="{% static 'media/images/testimonial2.jpg' %}" alt="Person Picture" class="testimonial-picture">
 
-                <p class="testimonial-text">"I've been a member of PowerPeak for years and I continue to be impressed by
-                    the quality of service and facilities. Highly recommend!"</p>
+                <p class="testimonial-text">
+                    {% trans "„Член съм на PowerPeak от години и продължавам да съм впечатлен от качеството на услугата и съоръженията. Горещо препоръчвам!“" %}
+                </p>
 
                 <div class="testimonial-rating">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -119,14 +122,15 @@
                     </svg>
                 </div>
 
-                <p class="testimonial-name">John D.</p>
+                <p class="testimonial-name">{% trans "Георги Д." %}</p>
             </div>
 
             <div class="box testimonial-box">
                 <img src="{% static 'media/images/testimonial3.jpg' %}" alt="Person Picture" class="testimonial-picture">
 
-                <p class="testimonial-text">"PowerPeak Gym's trainers and classes transformed my fitness journey. I feel
-                    stronger and more confident. Thank you for the support!"</p>
+                <p class="testimonial-text">
+                    {% trans "„Треньорите и занятията на PowerPeak Gym преобразиха моето фитнес приключение. Чувствам се по-силен и по-уверен. Благодаря ви за подкрепата!“" %}
+                </p>
 
                 <div class="testimonial-rating">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -146,13 +150,13 @@
                     </svg>
                 </div>
 
-                <p class="testimonial-name">Alex R.</p>
+                <p class="testimonial-name">{% trans "Алекс Р." %}</p>
             </div>
         </div>
     </section>
 
     <section class="contacts" id="index-contacts">
-        <p class="section-title">Contacts</p>
+        <p class="section-title">{% trans "Контакти" %}</p>
 
         <div class="box-container contacts-container">
             <div class="box contact-box">
@@ -160,9 +164,9 @@
                     <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
                 </svg>
 
-                <p class="contact-type">Address</p>
+                <p class="contact-type">{% trans "Адрес" %}</p>
 
-                <p class="contact-value">Plovdiv,<br>bul."6-ti Septemvri" 110А</p>
+                <p class="contact-value">{% trans "Пловдив," %}<br>{% trans "бул. „6-ти септември“ 110А" %}</p>
             </div>
 
             <div class="box contact-box">
@@ -170,7 +174,7 @@
                     <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
                 </svg>
 
-                <p class="contact-type">Phone number</p>
+                <p class="contact-type">{% trans "Телефонен номер" %}</p>
 
                 <p class="contact-value">+359 88 169 3341</p>
             </div>
@@ -180,7 +184,7 @@
                     <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
                 </svg>
 
-                <p class="contact-type">Email</p>
+                <p class="contact-type">{% trans "Имейл" %}</p>
 
                 <p class="contact-value">powerpeakgym@gmail.com</p>
             </div>
@@ -190,12 +194,12 @@
                     <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/>
                 </svg>
 
-                <p class="contact-type">Working hours</p>
+                <p class="contact-type">{% trans "Работно време" %}</p>
 
                 <p class="contact-value">24/7</p>
             </div>
         </div>
 
-        <a href="#" class="button contacts-button">Contact us</a>
+        <a href="{% url 'about' %}#about-contacts" class="button contacts-button">{% trans "Свържете се с нас" %}</a>
     </section>
 {% endblock %}

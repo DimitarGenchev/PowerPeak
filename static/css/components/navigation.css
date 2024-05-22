@@ -113,6 +113,11 @@
         border: none;
     }
 
+    #lang-switch {
+        padding: 0;
+        background: none;
+    }
+
     .menuToggle span {
         display: none;
     }

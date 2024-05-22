@@ -1,8 +1,9 @@
 {% extends 'common/base.html' %}
+{% load i18n %}
 
 {% block content %}
     <section class="change-email">
-        <p class="section-title">Change email</p>
+        <p class="section-title">{% trans 'Промяна на имейл' %}</p>
 
         <form class="change-email-form" action="{% url 'change user email' %}" method="post">
             {% csrf_token %}
@@ -11,7 +12,7 @@
                 {{ form.email }}
             </div>
 
-            <button class="change-email-button" type="submit">Change email</button>
+            <button class="change-email-button" type="submit">{% trans 'Промени' %}</button>
         </form>
     </section>
 {% endblock %}

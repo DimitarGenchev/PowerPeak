@@ -1,6 +1,7 @@
 from django.core.validators import MinLengthValidator, RegexValidator
 from django.db import models
 from django.contrib.auth import models as auth_models
+from django.utils.translation import gettext_lazy as _
 
 from GymMembershipsApp.users import managers
 from GymMembershipsApp.users.utils import calculate_age
@@ -33,7 +34,7 @@ class GymUser(auth_models.AbstractUser):
         validators=[
             RegexValidator(
                 regex=r'^(?:\+359|0)\d{9}$',
-                message='Phone number must start with +359 or 0 followed by 9 digits.'
+                message=_('Телефонният номер трябва да започва с +359 или 0, последвано от 9 цифри.')
             ),
         ]
     )

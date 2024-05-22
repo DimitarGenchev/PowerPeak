@@ -1,7 +1,16 @@
+{% load i18n %}
+{% get_current_language as lang %}
+
 <div class="box price-box">
-    <p class="membership-type">{{ membershiptype.display_name }}</p>
+    <p class="membership-type">
+        {% if lang == 'bg' %}
+            {{ membershiptype.name_bg }}
+        {% else %}
+            {{ membershiptype.name_en }}
+        {% endif %}
+    </p>
 
-    <p class="membership-duration">Prices starting from</p>
+    <p class="membership-duration">{% trans "Цени, започващи от" %}</p>
 
-    <p class="membership-price">{{ membershiptype.price_for_one_month }}<br>BGN</p>
+    <p class="membership-price">{{ membershiptype.price_for_one_month }}<br>{% trans "ЛВ" %}</p>
 </div>

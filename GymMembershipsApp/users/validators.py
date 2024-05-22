@@ -9,7 +9,7 @@ def validate_age_12_and_above(date_of_birth):
 
     if age < 12:
         raise ValidationError(
-            _('You must be at least 12 years old to register.'),
+            _('Трябва да имате навършени 12 години, за да се регистрирате.'),
             params={'value': date_of_birth},
         )
 
@@ -17,6 +17,6 @@ def validate_age_12_and_above(date_of_birth):
 def validate_name_contains_alphabet_only(value):
     if not value.isalpha():
         raise ValidationError(
-            _('First and last names should only contain alphabetic characters.'),
+            _('Името и фамилията Ви трябва да съдържат само букви.'),
             params={'value': value},
         )

@@ -26,7 +26,7 @@ def generate_password():
 
 
 def generate_email(user, generated_password=None):
-    email = f'Hey, {user.first_name}. Welcome to PowerPeak! Thank you for registering'
+    email = f'Hey, {user.first_name}. Welcome to PowerPeak! Thank you for registering!'
 
     if hasattr(user, 'created_via_admin'):
         email += f'\nYour default password is: {generated_password}'

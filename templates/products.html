@@ -1,9 +1,10 @@
 {% extends 'common/base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
     <section class="products">
-        <p class="section-title">Products</p>
+        <p class="section-title">{% trans "Продукти" %}</p>
 
         <form action="{% url 'products' %}" method="get" class="search-form">
             <div class="search-bar">
@@ -24,7 +25,7 @@
         </form>
 
         <div class="products-count">
-            <p>{{ object_list.count }} product{% if object_list.count != 1 %}s{% endif %} found</p>
+            <p>{{ object_list.count }} {% trans "продукт/а" %} {% trans "намерени" %}</p>
         </div>
 
         <div class="products-container">

@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <div class="product-box">
     <img src="{{ product.product_picture.url }}" alt="{{ product.name }}" class="product-picture">
 
@@ -5,5 +7,5 @@
 
     <p class="product-brand">{{ product.brand.name }}</p>
 
-    <p class="product-price">{{ product.price }} BGN</p>
+    <p class="product-price">{{ product.price }} {% trans 'ЛВ' %}</p>
 </div>

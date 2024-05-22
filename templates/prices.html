@@ -1,8 +1,9 @@
 {% extends 'common/base.html' %}
+{% load i18n %}
 
 {% block content %}
     <section class="prices">
-        <p class="section-title">Membership prices</p>
+        <p class="section-title">{% trans "Цени на абонаменти" %}</p>
 
         <div class="box-container prices-container">
             {% for membershiptype in object_list %}
@@ -12,8 +13,8 @@
     </section>
 
     <section class="where-to-buy">
-        <p class="big-title">Get your membership at reception</p>
+        <p class="big-title">{% trans "Закупете вашия абонамент на рецепция" %}</p>
 
-        <a href="{% url 'about' %}#map" class="button location-button">Where to find us</a>
+        <a href="{% url 'about' %}#map" class="button location-button">{% trans "Къде да ни намерите" %}</a>
     </section>
 {% endblock %}

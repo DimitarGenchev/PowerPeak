@@ -1,10 +1,18 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as lang %}
 
 <div class="box trainer-box">
     <img src="{{ trainer.trainer_picture.url }}" alt="{{ trainer }}" class="trainer-picture">
 
     <div class="trainer-text">
-        <p class="trainer-name">{{ trainer }}</p>
+        <p class="trainer-name">
+            {% if lang == 'bg' %}
+                {{ trainer.first_name_bg }} {{ trainer.last_name_bg }}
+            {% else %}
+                {{ trainer.first_name_en }} {{ trainer.last_name_en }}
+            {% endif %}
+        </p>
 
         <p class="trainer-type">{{ trainer.get_trainer_type_display }}</p>
     </div>

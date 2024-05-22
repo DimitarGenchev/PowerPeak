@@ -1,8 +1,9 @@
 {% extends 'common/base.html' %}
+{% load i18n %}
 
 {% block content %}
     <section class="register">
-        <p class="section-title">Register</p>
+        <p class="section-title">{% trans "Регистрация" %}</p>
     
         <form class="register-form" method="post" action="{% url 'register user' %}">
             {% csrf_token %}
@@ -11,9 +12,9 @@
 
             <p class="register-message">
                 {% if not wizard.steps.prev %}
-                    Credentials
+                    {% trans "Входни данни" %}
                 {% else %}
-                    Personal Information
+                    {% trans "Лична информация" %}
                 {% endif %}
             </p>
 
@@ -31,21 +32,21 @@
                 {% if wizard.steps.prev %}
                     <button class="register-button" type="submit" name="wizard_goto_step"
                             value="{{ wizard.steps.prev }}" formnovalidate>
-                        Previous
+                        {% trans 'Назад' %}
                     </button>
                 {% endif %}
 
                 <button class="register-button" type="submit">
                     {% if wizard.steps.next %}
-                        Next
+                        {% trans "Следващ" %}
                     {% else %}
-                        Register
+                        {% trans "Регистрация" %}
                     {% endif %}
                 </button>
             </div>
         
             {% if not wizard.steps.prev %}
-            	<p class="have-account">Already have an account? <span><a href="{% url 'login user' %}">Login</a></span></p>
+            	<p class="have-account">{% trans "Вече имате акаунт?" %} <span><a href="{% url 'login user' %}">{% trans "Вход" %}</a></span></p>
             {% endif %} 
         </form>
     </section>

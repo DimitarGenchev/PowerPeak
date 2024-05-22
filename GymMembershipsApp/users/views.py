@@ -1,4 +1,5 @@
 from django.contrib.auth import login, views as auth_views, get_user_model
+from django.contrib.auth import mixins as auth_mixins
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic as views
@@ -38,24 +39,24 @@ class UserLoginView(auth_views.LoginView):
     form_class = UserLoginForm
 
 
-class UserLogoutView(auth_views.LogoutView):
+class UserLogoutView(auth_mixins.LoginRequiredMixin, auth_views.LogoutView):
     ...
 
 
-class UserDetailsView(views.ListView):
+class UserDetailsView(auth_mixins.LoginRequiredMixin, views.ListView):
     template_name = 'profile.html'
 
     def get_queryset(self):
         return self.request.user.membership_set.order_by('-start_date')
 
 
-class ChangeUserPasswordView(auth_views.PasswordChangeView):
+class ChangeUserPasswordView(auth_mixins.LoginRequiredMixin, auth_views.PasswordChangeView):
     template_name = 'change-password.html'
     form_class = UserChangePasswordForm
     success_url = reverse_lazy('details user')
 
 
-class ChangeUserEmailView(views.UpdateView):
+class ChangeUserEmailView(auth_mixins.LoginRequiredMixin, views.UpdateView):
     template_name = 'change-email.html'
     fields = ['email']
     success_url = reverse_lazy('details user')
