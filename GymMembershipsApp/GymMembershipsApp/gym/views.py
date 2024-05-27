@@ -46,9 +46,13 @@ class ProductsView(views.ListView):
         search = self.request.GET.get('search')
         product_category = self.request.GET.get('category')
         product_brand = self.request.GET.get('brand')
+        language = self.request.LANGUAGE_CODE
 
         if search != '' and search is not None:
-            queryset = queryset.filter(name__icontains=search)
+            if language == 'bg':
+                queryset = queryset.filter(name_bg__icontains=search)
+            else:
+                queryset = queryset.filter(name_en__icontains=search)
 
         if product_category != '' and product_category is not None:
             queryset = queryset.filter(category_id=product_category)

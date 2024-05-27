@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 01:03+0300\n"
+"POT-Creation-Date: 2024-05-27 17:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Търсете продукти..."
 msgstr "Search products..."
 
-#: .\GymMembershipsApp\gym\forms.py:19
+#: .\GymMembershipsApp\gym\forms.py:41 .\GymMembershipsApp\gym\forms.py:44
 msgid "Категория"
 msgstr "Category"
 
-#: .\GymMembershipsApp\gym\forms.py:29
+#: .\GymMembershipsApp\gym\forms.py:42 .\GymMembershipsApp\gym\forms.py:45
 msgid "Марка"
 msgstr "Brand"
 
@@ -47,11 +47,6 @@ msgstr "Confirm password"
 #: .\GymMembershipsApp\users\forms.py:49 .\templates\profile.html:20
 msgid "Дата на раждане"
 msgstr "Date of birth"
-
-#: .\templates\profile.html:13
-msgctxt "profile"
-msgid "Име"
-msgstr "Name"
 
 #: .\GymMembershipsApp\users\forms.py:59
 msgctxt "forms"
@@ -99,8 +94,8 @@ msgstr "Our Story"
 msgid ""
 "PowerPeak е фитнес център, основан през 2005 г. в Пловдив. Със своите "
 "изключителни тренировъчни програми и модерно оборудване, той бързо добива "
-"популярност. През годините се разширявам, отваряйки центрове в цялата "
-"страна, предлагащи висококачествено обслужване и мотивация за своите клиенти."
+"популярност. През годините се разширява, отваряйки центрове в цялата страна, "
+"предлагащи висококачествено обслужване и мотивация за своите клиенти."
 msgstr ""
 "PowerPeak is a fitness center founded in 2005 in Plovdiv. With its "
 "exceptional training programs and modern equipment, it quickly gains "
@@ -234,7 +229,7 @@ msgstr "Prices starting from"
 #: .\templates\common\partials\price-boxes-per-type.html:29
 #: .\templates\common\partials\price-boxes-per-type.html:43
 #: .\templates\common\partials\price-boxes-per-type.html:57
-#: .\templates\common\partials\product-box.html:10
+#: .\templates\common\partials\product-box.html:17
 msgid "ЛВ"
 msgstr "BGN"
 
@@ -299,7 +294,7 @@ msgstr "Our customers"
 #: .\templates\index.html:76
 msgid ""
 "„Присъединяването към PowerPeak Gym беше най-доброто решение, което някога "
-"съм вземала! Атмосферата е мотивираща, треньорите са опитни и постинах "
+"съм вземала! Атмосферата е мотивираща, треньорите са опитни и постигнах "
 "невероятни резултати.“"
 msgstr ""
 "'Joining PowerPeak Gym was the best decision I ever made! The atmosphere is "
@@ -365,6 +360,11 @@ msgstr "found"
 #: .\templates\profile.html:6
 msgid "Моят профил"
 msgstr "My profile"
+
+#: .\templates\profile.html:13
+msgctxt "profile"
+msgid "Име"
+msgstr "Name"
 
 #: .\templates\profile.html:27
 msgid "Номер"

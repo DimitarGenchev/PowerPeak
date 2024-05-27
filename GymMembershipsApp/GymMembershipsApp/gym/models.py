@@ -47,10 +47,10 @@ class MembershipType(models.Model):
 
 class Membership(models.Model):
     class DurationChoices(models.IntegerChoices):
-        ONE_MONTH = 1, f'1 {_('месец')}'
-        THREE_MONTHS = 3, f'3 {_('месеца')}'
-        SIX_MONTHS = 6, f'6 {_('месеца')}'
-        TWELVE_MONTHS = 12, f'12 {_('месеца')}'
+        ONE_MONTH = 1, '1 месец'
+        THREE_MONTHS = 3, '3 месеца'
+        SIX_MONTHS = 6, '6 месеца'
+        TWELVE_MONTHS = 12, '12 месеца'
 
     duration = models.IntegerField(
         choices=DurationChoices.choices,
@@ -90,7 +90,7 @@ class Membership(models.Model):
         return datetime.now().date() <= self.end_date
 
     def __str__(self):
-        return f'{self.user.first_name} {self.user.last_name} - {self.duration} {_('months')}'
+        return f'{self.user.first_name} {self.user.last_name} - {self.duration} месец/а'
 
     def save(self, *args, **kwargs):
         result = super().save(*args, **kwargs)

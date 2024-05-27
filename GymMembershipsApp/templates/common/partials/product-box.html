@@ -1,9 +1,16 @@
 {% load i18n %}
+{% get_current_language as lang %}
 
 <div class="product-box">
     <img src="{{ product.product_picture.url }}" alt="{{ product.name }}" class="product-picture">
 
-    <p class="product-name">{{ product.name }}</p>
+    <p class="product-name">
+        {% if lang == 'bg' %}
+            {{ product.name_bg }}
+        {% else %}
+            {{ product.name_en }}
+        {% endif %}
+    </p>
 
     <p class="product-brand">{{ product.brand.name }}</p>
 
