@@ -19,6 +19,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
+CSRF_TRUSTED_ORIGINS = ["http://localhost:1337"]
 
 MY_APPS = [
     'GymMembershipsApp.gym',
@@ -139,9 +140,11 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 AUTH_USER_MODEL = 'users.GymUser'
 

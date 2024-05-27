@@ -1,4 +1,6 @@
 .idea/
 .env
 venv/
-media/
+mediafiles/
+.env.prod
+.env.prod.db
