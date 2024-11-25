@@ -140,7 +140,7 @@ msgstr "Plovdiv,"
 
 #: .\templates\about.html:59 .\templates\index.html:169
 msgid "бул. „6-ти септември“ 110А"
-msgstr "bul. '6-ti Septemvri' 110А"
+msgstr "bul. \"6-ti Septemvri\" 110А"
 
 #: .\templates\about.html:67 .\templates\index.html:177
 msgid "Телефонен номер"
@@ -297,9 +297,9 @@ msgid ""
 "съм вземала! Атмосферата е мотивираща, треньорите са опитни и постигнах "
 "невероятни резултати.“"
 msgstr ""
-"'Joining PowerPeak Gym was the best decision I ever made! The atmosphere is "
+"\"Joining PowerPeak Gym was the best decision I ever made! The atmosphere is "
 "motivating, the trainers are knowledgeable, and I've seen incredible "
-"results.'"
+"results.\""
 
 #: .\templates\index.html:97
 msgid "Мария А."
@@ -310,8 +310,8 @@ msgid ""
 "„Член съм на PowerPeak от години и продължавам да съм впечатлен от "
 "качеството на услугата и съоръженията. Горещо препоръчвам!“"
 msgstr ""
-"'I've been a member of PowerPeak for years and I continue to be impressed by "
-"the quality of service and facilities. Highly recommend!'"
+"\"I've been a member of PowerPeak for years and I continue to be impressed by "
+"the quality of service and facilities. Highly recommend!\""
 
 #: .\templates\index.html:125
 msgid "Георги Д."
@@ -322,8 +322,8 @@ msgid ""
 "„Треньорите и занятията на PowerPeak Gym преобразиха моето фитнес "
 "приключение. Чувствам се по-силен и по-уверен. Благодаря ви за подкрепата!“"
 msgstr ""
-"'PowerPeak Gym's trainers and classes transformed my fitness journey. I feel "
-"stronger and more confident. Thank you for the support!'"
+"\"PowerPeak Gym's trainers and classes transformed my fitness journey. I feel "
+"stronger and more confident. Thank you for the support!\""
 
 #: .\templates\index.html:153
 msgid "Алекс Р."

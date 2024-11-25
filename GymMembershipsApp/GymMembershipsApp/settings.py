@@ -20,7 +20,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
 
-MY_APPS = [
+PROJECT_APPS = [
     'GymMembershipsApp.gym',
     'GymMembershipsApp.users',
 ]
@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'formtools',
-] + MY_APPS
+] + PROJECT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

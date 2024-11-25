@@ -16,9 +16,12 @@
                 {{ form.password }}
             </div>
 
+            {{ form.non_field_errors }}
+
             <button class="login-button" type="submit">{% trans "Вход" %}</button>
 
-            <p class="no-account">{% trans "Нямате акаунт?" %} <span><a href="{% url 'register user' %}">{% trans "Регистрация" %}</a></span></p>
+            <p class="no-account">{% trans "Нямате акаунт?" %} <span><a
+                    href="{% url 'register user' %}">{% trans "Регистрация" %}</a></span></p>
 
             {% csrf_token %}
         </form>

@@ -10,11 +10,17 @@ UserModel = get_user_model()
 class CustomDateField(forms.DateField):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        current_year = datetime.now().year
-        self.widget.years = range(1950, current_year - 12)
+
+        min_year = datetime.now().year - 12
+        self.widget.years = range(1950, min_year + 1)
+        self.initial = datetime(2000, 1, 1)
 
 
 class UserAdminRegisterForm(forms.ModelForm):
+    date_of_birth = CustomDateField(
+        widget=forms.SelectDateWidget(),
+    )
+
     class Meta:
         model = UserModel
         fields = ['first_name', 'last_name', 'date_of_birth', 'email', 'phone_number']

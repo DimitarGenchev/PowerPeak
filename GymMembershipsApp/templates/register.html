@@ -4,7 +4,7 @@
 {% block content %}
     <section class="register">
         <p class="section-title">{% trans "Регистрация" %}</p>
-    
+
         <form class="register-form" method="post" action="{% url 'register user' %}">
             {% csrf_token %}
             {{ wizard.management_form }}
@@ -25,6 +25,8 @@
                     {% endif %}
 
                     {{ field }}
+
+                    {{ field.errors }}
                 </div>
             {% endfor %}
 
@@ -44,10 +46,11 @@
                     {% endif %}
                 </button>
             </div>
-        
+
             {% if not wizard.steps.prev %}
-            	<p class="have-account">{% trans "Вече имате акаунт?" %} <span><a href="{% url 'login user' %}">{% trans "Вход" %}</a></span></p>
-            {% endif %} 
+                <p class="have-account">{% trans "Вече имате акаунт?" %} <span><a
+                        href="{% url 'login user' %}">{% trans "Вход" %}</a></span></p>
+            {% endif %}
         </form>
     </section>
 {% endblock %}

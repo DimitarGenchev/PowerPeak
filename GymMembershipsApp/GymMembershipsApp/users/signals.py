@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.db.models.signals import pre_save
+from django.contrib.auth.models import Group
+from django.db.models.signals import pre_save, m2m_changed
 from django.dispatch import receiver
 from django.core.mail import send_mail
 
@@ -27,3 +28,16 @@ def pre_create_user(sender, instance, **kwargs):
             [instance.email],
             fail_silently=False,
         )
+
+
+def update_is_staff(sender, instance, action, pk_set, **kwargs):
+    if action in ['post_add', 'post_remove']:
+        staff_group = Group.objects.filter(name='Staff').first()
+
+        if staff_group:
+            in_staff_group = staff_group in instance.groups.all()
+            instance.is_staff = in_staff_group
+            instance.save()
+
+
+m2m_changed.connect(update_is_staff, sender=UserModel.groups.through)
