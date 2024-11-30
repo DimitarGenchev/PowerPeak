@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'formtools',
+    'rest_framework',
+    'django_filters',
 ] + PROJECT_APPS
 
 MIDDLEWARE = [

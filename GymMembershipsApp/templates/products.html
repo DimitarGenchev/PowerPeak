@@ -25,17 +25,17 @@
         </form>
 
         <div class="products-count">
-            <p>{{ object_list.count }} {% trans "продукт/а" %} {% trans "намерени" %}</p>
+            <p><span></span> {% trans "продукт/а" %} {% trans "намерени" %}</p>
         </div>
 
-        <div class="products-container">
-            {% for product in object_list %}
-                {% include 'common/partials/product-box.html' with product=product %}
-            {% endfor %}
+        <div class="products-container"></div>
+    
+        <div class="pagination">
+            
         </div>
     </section>
 {% endblock %}
 
 {% block scripts %}
-    <script src="{% static 'js/remove-default-select-option.js' %}"></script>
+    <script src="{% static 'js/render-products.js' %}"></script>
 {% endblock %}

@@ -2,10 +2,14 @@ from urllib.parse import urlparse, urlunparse
 
 from django.contrib.auth import get_user_model
 from django.shortcuts import redirect
+from django.template.loader import render_to_string
 
 from django.utils.translation import gettext_lazy as _
 
 from django.views import generic as views
+from rest_framework import generics
+from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
 
 from GymMembershipsApp.gym.forms import ProductsFilterForm
 from GymMembershipsApp.gym.models import MembershipType, Trainer, Product
@@ -28,39 +32,39 @@ class PricesView(views.ListView):
     model = MembershipType
 
 
-class ProductsView(views.ListView):
-    template_name = 'products.html'
-    model = Product
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        filter_form = ProductsFilterForm()
-        context['form'] = filter_form
-
-        return context
+class ProductsAPIView(generics.ListAPIView):
+    queryset = Product.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['category', 'brand']
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        search = self.request.query_params.get('search', '')
 
-        search = self.request.GET.get('search')
-        product_category = self.request.GET.get('category')
-        product_brand = self.request.GET.get('brand')
-        language = self.request.LANGUAGE_CODE
+        if search:
+            language = self.request.LANGUAGE_CODE
 
-        if search != '' and search is not None:
             if language == 'bg':
                 queryset = queryset.filter(name_bg__icontains=search)
             else:
                 queryset = queryset.filter(name_en__icontains=search)
 
-        if product_category != '' and product_category is not None:
-            queryset = queryset.filter(category_id=product_category)
-
-        if product_brand != '' and product_brand is not None:
-            queryset = queryset.filter(brand_id=product_brand)
-
         return queryset
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+
+        rendered_products = [
+            render_to_string('common/partials/product-box.html', {'product': product})
+            for product in queryset
+        ]
+
+        return Response({'products': rendered_products, 'count': len(queryset)})
+
+
+class ProductsView(views.FormView):
+    template_name = 'products.html'
+    form_class = ProductsFilterForm
 
 
 def switch_language(request):

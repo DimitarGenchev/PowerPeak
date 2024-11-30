@@ -62,9 +62,10 @@
             {% if request.user.is_authenticated %}
                 {% if request.user.is_staff %}
                     <li><a href="{% url 'admin:index' %}">{% trans "Администрация" %}</a></li>
+                {% else %}
+                    <li><a href="{% url 'details user' %}">{% trans "Профил" %}</a></li>
                 {% endif %}
 
-                <li><a href="{% url 'details user' %}">{% trans "Профил" %}</a></li>
                 <li><a href="#" onclick="document.getElementById('logout-form').submit();">{% trans "Изход" %}</a></li>
             {% else %}
                 <li><a href="{% url 'register user' %}">{% trans "Регистрация" %}</a></li>
