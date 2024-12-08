@@ -1,0 +1,111 @@
+/* Profile section */
+
+.profile {
+    text-align: center;
+    padding: 4em 2em;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid var(--special-grey);
+}
+
+.profile-details {
+    font-size: 1.2em;
+    text-align: left;
+    padding: 1.2em;
+    border-radius: 5px;
+    background-color: var(--special-grey);
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+
+.profile-details svg {
+    width: 1em;
+    fill: var(--special-red);
+    margin-right: 0.3em;
+}
+
+.profile-details p:not(.email) {
+    margin-bottom: 0.5em;
+}
+
+.profile-buttons {
+    display: flex;
+    gap: 0.5em;
+    font-size: 1.2em;
+}
+
+.email-change, .password-change {
+    background-color: var(--special-grey);
+    padding: 0.5em;
+    border-radius: 5px;
+    transition: 0.3s ease-in;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    .profile-details {
+       width: 30em;
+    }
+    
+}
+
+/* Desktop */
+
+@media (hover: hover) {
+    .email-change:hover, .password-change:hover {
+        background-color: var(--special-red);
+    }
+}
+
+/* Memberships section */
+
+.memberships {
+    text-align: center;
+    padding: 4em 3em;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    flex-grow: 1;
+}
+
+.memberships-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    justify-content: center;
+}
+
+.membership-box {
+    background-color: var(--special-red);
+    font-size: 1.2em;
+    padding: 2em;
+    border-radius: 5px;
+}
+
+.expired {
+    background-color: var(--special-grey);
+}
+
+.membership-box p:not(.is-active) {
+    margin-bottom: 0.5em;
+}
+
+.membership-box span {
+    font-weight: bold;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    .memberships-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1100px) {
+    .memberships-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

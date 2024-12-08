@@ -1,0 +1,14 @@
+.section-title {
+    display: inline-block;
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 1;
+    border-bottom: 3px solid;
+    margin-bottom: 1.2em;
+    padding-bottom: 0.4em;
+}
+
+.big-title {
+    font-size: 4em;
+    font-weight: bold;
+}

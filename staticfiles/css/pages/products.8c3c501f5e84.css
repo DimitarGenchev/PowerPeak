@@ -1,0 +1,145 @@
+.products {
+    padding: 4em 0;
+    text-align: center;
+    background-color: var(--special-red);
+    flex-grow: 1;
+}
+
+.products .section-title {
+    color: rgb(255, 255, 255);
+}
+
+.search-form {
+    margin-bottom: 2em;
+    padding: 0 2em;
+}
+
+.search-bar {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.product-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+#search-input, #product-category-input, #product-brand-input {
+    font-size: 1.5em;
+    flex-grow: 1;
+}
+
+#product-category-input, #product-brand-input {
+    border-radius: 7px;
+    border: 0;
+    padding: 0.5em;
+}
+
+#search-input, .search-button {
+    border: none;
+    border-radius: 0;
+}
+
+#search-input {
+    padding: 0.5em;
+}
+
+#search-input:enabled {
+    outline: none;
+}
+
+.search-button {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#search-icon {
+    color: rgb(0, 0, 0);
+    height: calc(2em);
+}
+
+.products-count p {
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: min-content;
+    justify-content: center;
+    gap: 2em;
+}
+
+.product-box {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding-bottom: 0.8em;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-picture {
+    height: 30vh;
+    width: auto;
+    margin-bottom: 0.8em;
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0.3em;
+}
+
+.product-brand {
+    font-size: 1.4em;
+    margin-bottom: 0.8em;
+}
+
+.product-price {
+    font-size: 2em;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    .products {
+        padding: 4em 3em;
+    }
+
+    .search-form {
+        padding: 0;
+    }
+
+    .products-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product-picture {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 800px) {
+    .search-form {
+        display: flex;
+        gap: 0.5em;
+    }
+
+    .search-bar {
+        flex-grow: 1;
+        margin-bottom: 0;
+    }
+}
+
+/* Desktop  */
+
+@media (min-width: 1100px) {
+    .products-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

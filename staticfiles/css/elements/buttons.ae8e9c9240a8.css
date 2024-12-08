@@ -1,0 +1,6 @@
+.button {
+    display: inline-block;
+    padding: 0.5em 0.8em;
+    border-radius: 0.3em;
+    transition: 0.3s ease-in;
+}

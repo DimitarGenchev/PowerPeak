@@ -1,0 +1,178 @@
+/* Hero section */
+
+.hero {
+    min-height: 40vh;
+    background-image: linear-gradient(
+        rgb(0, 0, 0, 0.5),
+        rgb(0, 0, 0, 0.5)
+    ),
+    url("../../media/images/hero.005d7d1cea5e.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 70%;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-text p {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+
+.hero-button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+}
+
+/* What we offer section */
+
+.what-we-offer {
+    text-align: center;
+    padding: 4em 0;
+    background-color: var(--special-red);
+    color: white;
+}
+
+.what-we-offer > p {
+    margin-bottom: 1.2em;
+}
+
+.perk-box {
+    background-color: rgb(0, 0, 0);
+}
+
+.perk-box p {
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    /* Hero section */
+
+    .hero {
+        min-height: 50vh;
+    }
+
+    .hero-text p {
+        font-size: 2.5em;
+    }
+
+    .hero-button {
+        font-size: 1.5em;
+    }
+
+    /* What we offer section */
+
+    .what-we-offer {
+        padding: 4em 3em;
+    }
+
+    .perks-container {
+        align-items: stretch;
+    }
+
+    .perk-box {
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .perk-box p {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1100px) {
+    /* Hero section */
+
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-text p {
+        font-size: 3.5em;
+    }
+
+    .hero-button {
+        font-size: 1.7em;
+    }
+
+    /* What we offer section */
+
+    .perk-box {
+        flex-basis: 30%;
+    }
+}
+
+@media (hover: hover) {
+    .hero-button:hover {
+        background-color: var(--hover-red);
+        color: rgb(255, 255, 255);
+    }
+}
+
+/* Membership prices section */
+
+#index-prices .prices-container {
+    margin-bottom: 4em;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    #index-prices .prices-container {
+        align-items: stretch;
+    }
+
+    #index-prices .price-box {
+        flex-grow: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #index-prices .membership-price {
+        margin-top: auto;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1300px) {
+    #index-prices .price-box {
+        flex-grow: 1;
+    }    
+}
+
+/* Testimonials section */
+
+#index-testimonials {
+    border-top: 2px solid var(--special-grey);
+}
+
+/* Contacts section */
+
+#index-contacts {
+    border-top: 2px solid var(--special-grey);
+}
+
+#index-contacts .contacts-container {
+    margin-bottom: 4em;
+}

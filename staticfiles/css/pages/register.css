@@ -1,0 +1,88 @@
+.register {
+    padding: 4em 0;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    flex-grow: 1;
+    background-color: var(--special-red);
+}
+
+.register-form {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    margin: 0 auto;
+    width: 25em;
+    padding: 1em 1.8em;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.4);
+}
+
+.register-message {
+    font-size: 2em;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+}
+
+.register-form div:not(.register-buttons) {
+    margin-bottom: 0.7em;
+}
+
+.register-form input {
+    font-size: 1.1em;
+    width: 100%;
+    padding: 0.3em;
+    border-radius: 5px;
+    margin-bottom: 0.3em;
+}
+
+.register-form select {
+    font-size: 1.1em;
+    padding: 0.3em;
+    border-radius: 5px;
+}
+
+.register-form label {
+    display: block;
+    font-size: 1.1em;
+}
+
+.personal-info-buttons {
+    margin-bottom: 0.8em;
+}
+
+.register-buttons {
+    display: flex;
+    width: 100%;
+}
+
+.register-button {
+    flex-grow: 1;
+    font-size: 1.1em;
+    padding: 0.3em;
+    margin-top: 0.5em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.have-account {
+    margin-top: 1.5em;
+    font-size: 1em;
+}
+
+.have-account span {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Desktop */
+
+@media (hover: hover) {
+    .register-button:hover {
+        background-color: rgb(214, 214, 214);
+    }
+
+    .have-account span:hover {
+        text-decoration: underline;
+    }
+}
