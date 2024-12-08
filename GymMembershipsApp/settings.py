@@ -19,6 +19,7 @@ DEBUG = os.getenv('DEBUG', config('DEBUG', default=False)) == 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', config('ALLOWED_HOSTS', default=[])).split(',')
 
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', default=[])
 
 PROJECT_APPS = [
     'GymMembershipsApp.gym',
