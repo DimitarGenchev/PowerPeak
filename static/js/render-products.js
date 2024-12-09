@@ -1,4 +1,4 @@
-baseUrl = 'http://localhost:8000';
+baseUrl = 'https://powerpeak-fudzdsacbqanbwd7.italynorth-01.azurewebsites.net';
 const language = document.documentElement.lang;
 
 if (language === 'en') {
