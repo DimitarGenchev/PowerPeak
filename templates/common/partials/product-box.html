@@ -12,7 +12,13 @@
         {% endif %}
     </p>
 
-    <p class="product-brand">{{ product.brand.name }}</p>
+    <p class="product-brand">
+        {% if lang == 'bg' %}
+            {{ product.brand.name_bg }}
+        {% else %}
+            {{ product.brand.name_en }}
+        {% endif %}
+    </p>
 
     <p class="product-price">{{ product.price }} {% trans 'ЛВ' %}</p>
 </div>
