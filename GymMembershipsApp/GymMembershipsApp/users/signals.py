@@ -42,7 +42,8 @@ def update_is_staff_and_is_superuser(sender, instance, action, pk_set, **kwargs)
             instance.is_superuser = in_admin_group
 
         if staff_group:
-            in_staff_group = staff_group in instance.groups.all()
-            instance.is_staff = in_staff_group
+            if not instance.is_superuser:
+                in_staff_group = staff_group in instance.groups.all()
+                instance.is_staff = in_staff_group
 
         instance.save()
