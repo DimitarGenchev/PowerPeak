@@ -57,9 +57,7 @@ class Membership(models.Model):
     )
 
     start_date = models.DateField(
-        validators=[
-            MinValueValidator(date.today()),
-        ],
+        default=date.today,
     )
 
     end_date = models.DateField(
@@ -94,6 +92,9 @@ class Membership(models.Model):
 
     def save(self, *args, **kwargs):
         result = super().save(*args, **kwargs)
+
+        if self.start_date < date.today():
+            self.start_date = date.today()
 
         if self.end_date is None and self.price is None:
             self.end_date = self.start_date + relativedelta(months=self.duration)
