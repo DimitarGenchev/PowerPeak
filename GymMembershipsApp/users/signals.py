@@ -30,14 +30,19 @@ def pre_create_user(sender, instance, **kwargs):
         )
 
 
-def update_is_staff(sender, instance, action, pk_set, **kwargs):
+@receiver(m2m_changed, sender=UserModel.groups.through)
+def update_is_staff_and_is_superuser(sender, instance, action, pk_set, **kwargs):
     if action in ['post_add', 'post_remove']:
         staff_group = Group.objects.filter(name='Staff').first()
+        admin_group = Group.objects.filter(name='Admin').first()
+
+        if admin_group:
+            in_admin_group = admin_group in instance.groups.all()
+            instance.is_staff = in_admin_group
+            instance.is_superuser = in_admin_group
 
         if staff_group:
             in_staff_group = staff_group in instance.groups.all()
             instance.is_staff = in_staff_group
-            instance.save()
 
-
-m2m_changed.connect(update_is_staff, sender=UserModel.groups.through)
+        instance.save()

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-27 17:24+0300\n"
+"POT-Creation-Date: 2024-12-11 21:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,46 +30,46 @@ msgstr "Category"
 msgid "Марка"
 msgstr "Brand"
 
-#: .\GymMembershipsApp\users\forms.py:41 .\GymMembershipsApp\users\forms.py:69
+#: .\GymMembershipsApp\users\forms.py:47 .\GymMembershipsApp\users\forms.py:75
 #: .\templates\about.html:77 .\templates\index.html:187
 #: .\templates\profile.html:34
 msgid "Имейл"
 msgstr "Email"
 
-#: .\GymMembershipsApp\users\forms.py:42 .\GymMembershipsApp\users\forms.py:80
+#: .\GymMembershipsApp\users\forms.py:48 .\GymMembershipsApp\users\forms.py:86
 msgid "Парола"
 msgstr "Password"
 
-#: .\GymMembershipsApp\users\forms.py:43
+#: .\GymMembershipsApp\users\forms.py:49
 msgid "Потвърдете парола"
 msgstr "Confirm password"
 
-#: .\GymMembershipsApp\users\forms.py:49 .\templates\profile.html:20
+#: .\GymMembershipsApp\users\forms.py:55 .\templates\profile.html:20
 msgid "Дата на раждане"
 msgstr "Date of birth"
 
-#: .\GymMembershipsApp\users\forms.py:59
+#: .\GymMembershipsApp\users\forms.py:65
 msgctxt "forms"
 msgid "Име"
 msgstr "First name"
 
-#: .\GymMembershipsApp\users\forms.py:60
+#: .\GymMembershipsApp\users\forms.py:66
 msgid "Фамилия"
 msgstr "Last Name"
 
-#: .\GymMembershipsApp\users\forms.py:61
+#: .\GymMembershipsApp\users\forms.py:67
 msgid "Телефон"
 msgstr "Phone number"
 
-#: .\GymMembershipsApp\users\forms.py:90
+#: .\GymMembershipsApp\users\forms.py:96
 msgid "Стара парола"
 msgstr "Old password"
 
-#: .\GymMembershipsApp\users\forms.py:91
+#: .\GymMembershipsApp\users\forms.py:97
 msgid "Нова парола"
 msgstr "New password"
 
-#: .\GymMembershipsApp\users\forms.py:92
+#: .\GymMembershipsApp\users\forms.py:98
 msgid "Потвърдете нова парола"
 msgstr "Confirm new password"
 
@@ -154,7 +154,7 @@ msgstr "Working hours"
 msgid "Промяна на имейл"
 msgstr "Change email"
 
-#: .\templates\change-email.html:15 .\templates\change-password.html:23
+#: .\templates\change-email.html:16 .\templates\change-password.html:25
 msgid "Промени"
 msgstr "Change"
 
@@ -162,7 +162,7 @@ msgstr "Change"
 msgid "Промени парола"
 msgstr "Change password"
 
-#: .\templates\common\base.html:31
+#: .\templates\common\base.html:32
 msgid "Всички права запазени"
 msgstr "All rights reserved"
 
@@ -202,21 +202,21 @@ msgstr "Products"
 msgid "Администрация"
 msgstr "Administration"
 
-#: .\templates\common\partials\nav.html:67
+#: .\templates\common\partials\nav.html:66
 msgid "Профил"
 msgstr "Profile"
 
-#: .\templates\common\partials\nav.html:68
+#: .\templates\common\partials\nav.html:69
 msgid "Изход"
 msgstr "Logout"
 
-#: .\templates\common\partials\nav.html:70 .\templates\login.html:21
-#: .\templates\register.html:6 .\templates\register.html:43
+#: .\templates\common\partials\nav.html:71 .\templates\login.html:24
+#: .\templates\register.html:6 .\templates\register.html:45
 msgid "Регистрация"
 msgstr "Register"
 
-#: .\templates\common\partials\nav.html:71 .\templates\login.html:6
-#: .\templates\login.html:19 .\templates\register.html:49
+#: .\templates\common\partials\nav.html:72 .\templates\login.html:6
+#: .\templates\login.html:21 .\templates\register.html:52
 msgid "Вход"
 msgstr "Login"
 
@@ -229,7 +229,7 @@ msgstr "Prices starting from"
 #: .\templates\common\partials\price-boxes-per-type.html:29
 #: .\templates\common\partials\price-boxes-per-type.html:43
 #: .\templates\common\partials\price-boxes-per-type.html:57
-#: .\templates\common\partials\product-box.html:17
+#: .\templates\common\partials\product-box.html:23
 msgid "ЛВ"
 msgstr "BGN"
 
@@ -298,8 +298,8 @@ msgid ""
 "невероятни резултати.“"
 msgstr ""
 "\"Joining PowerPeak Gym was the best decision I ever made! The atmosphere is "
-"motivating, the trainers are knowledgeable, and I've seen incredible "
-"results.\""
+"motivating, the trainers are knowledgeable, and I've seen incredible results."
+"\""
 
 #: .\templates\index.html:97
 msgid "Мария А."
@@ -310,8 +310,8 @@ msgid ""
 "„Член съм на PowerPeak от години и продължавам да съм впечатлен от "
 "качеството на услугата и съоръженията. Горещо препоръчвам!“"
 msgstr ""
-"\"I've been a member of PowerPeak for years and I continue to be impressed by "
-"the quality of service and facilities. Highly recommend!\""
+"\"I've been a member of PowerPeak for years and I continue to be impressed "
+"by the quality of service and facilities. Highly recommend!\""
 
 #: .\templates\index.html:125
 msgid "Георги Д."
@@ -322,8 +322,8 @@ msgid ""
 "„Треньорите и занятията на PowerPeak Gym преобразиха моето фитнес "
 "приключение. Чувствам се по-силен и по-уверен. Благодаря ви за подкрепата!“"
 msgstr ""
-"\"PowerPeak Gym's trainers and classes transformed my fitness journey. I feel "
-"stronger and more confident. Thank you for the support!\""
+"\"PowerPeak Gym's trainers and classes transformed my fitness journey. I "
+"feel stronger and more confident. Thank you for the support!\""
 
 #: .\templates\index.html:153
 msgid "Алекс Р."
@@ -337,7 +337,7 @@ msgstr "Contact us"
 msgid "Добре дошли!"
 msgstr "Welcome back!"
 
-#: .\templates\login.html:21
+#: .\templates\login.html:23
 msgid "Нямате акаунт?"
 msgstr "Don't have an account?"
 
@@ -386,15 +386,15 @@ msgstr "Credentials"
 msgid "Лична информация"
 msgstr "Personal Information"
 
-#: .\templates\register.html:35
+#: .\templates\register.html:37
 msgid "Назад"
 msgstr "Previous"
 
-#: .\templates\register.html:41
+#: .\templates\register.html:43
 msgid "Следващ"
 msgstr "Next"
 
-#: .\templates\register.html:49
+#: .\templates\register.html:51
 msgid "Вече имате акаунт?"
 msgstr "Already have an account?"
 
@@ -1611,6 +1611,9 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Началната дата трябва да е днешната дата!"
+#~ msgstr "Start date must be today's date!"
 
 #~ msgid "You must be at least 12 years old to register."
 #~ msgstr "You must be at least 12 years old to register."

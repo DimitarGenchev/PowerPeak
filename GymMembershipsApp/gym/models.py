@@ -1,6 +1,7 @@
 from datetime import datetime, date
 
 from dateutil.relativedelta import relativedelta
+from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator, MinValueValidator
@@ -57,9 +58,7 @@ class Membership(models.Model):
     )
 
     start_date = models.DateField(
-        validators=[
-            MinValueValidator(date.today()),
-        ],
+        default=date.today,
     )
 
     end_date = models.DateField(
@@ -94,6 +93,9 @@ class Membership(models.Model):
 
     def save(self, *args, **kwargs):
         result = super().save(*args, **kwargs)
+
+        if self.start_date < date.today():
+            self.start_date = date.today()
 
         if self.end_date is None and self.price is None:
             self.end_date = self.start_date + relativedelta(months=self.duration)

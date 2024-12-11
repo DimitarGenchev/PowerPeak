@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-27 17:24+0300\n"
+"POT-Creation-Date: 2024-12-11 21:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,46 +30,46 @@ msgstr ""
 msgid "Марка"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:41 .\GymMembershipsApp\users\forms.py:69
+#: .\GymMembershipsApp\users\forms.py:47 .\GymMembershipsApp\users\forms.py:75
 #: .\templates\about.html:77 .\templates\index.html:187
 #: .\templates\profile.html:34
 msgid "Имейл"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:42 .\GymMembershipsApp\users\forms.py:80
+#: .\GymMembershipsApp\users\forms.py:48 .\GymMembershipsApp\users\forms.py:86
 msgid "Парола"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:43
+#: .\GymMembershipsApp\users\forms.py:49
 msgid "Потвърдете парола"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:49 .\templates\profile.html:20
+#: .\GymMembershipsApp\users\forms.py:55 .\templates\profile.html:20
 msgid "Дата на раждане"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:59
+#: .\GymMembershipsApp\users\forms.py:65
 msgctxt "forms"
 msgid "Име"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:60
+#: .\GymMembershipsApp\users\forms.py:66
 msgid "Фамилия"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:61
+#: .\GymMembershipsApp\users\forms.py:67
 msgid "Телефон"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:90
+#: .\GymMembershipsApp\users\forms.py:96
 msgid "Стара парола"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:91
+#: .\GymMembershipsApp\users\forms.py:97
 msgid "Нова парола"
 msgstr ""
 
-#: .\GymMembershipsApp\users\forms.py:92
+#: .\GymMembershipsApp\users\forms.py:98
 msgid "Потвърдете нова парола"
 msgstr ""
 
@@ -146,7 +146,7 @@ msgstr ""
 msgid "Промяна на имейл"
 msgstr ""
 
-#: .\templates\change-email.html:15 .\templates\change-password.html:23
+#: .\templates\change-email.html:16 .\templates\change-password.html:25
 msgid "Промени"
 msgstr ""
 
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Промени парола"
 msgstr ""
 
-#: .\templates\common\base.html:31
+#: .\templates\common\base.html:32
 msgid "Всички права запазени"
 msgstr ""
 
@@ -194,21 +194,21 @@ msgstr ""
 msgid "Администрация"
 msgstr ""
 
-#: .\templates\common\partials\nav.html:67
+#: .\templates\common\partials\nav.html:66
 msgid "Профил"
 msgstr ""
 
-#: .\templates\common\partials\nav.html:68
+#: .\templates\common\partials\nav.html:69
 msgid "Изход"
 msgstr ""
 
-#: .\templates\common\partials\nav.html:70 .\templates\login.html:21
-#: .\templates\register.html:6 .\templates\register.html:43
+#: .\templates\common\partials\nav.html:71 .\templates\login.html:24
+#: .\templates\register.html:6 .\templates\register.html:45
 msgid "Регистрация"
 msgstr ""
 
-#: .\templates\common\partials\nav.html:71 .\templates\login.html:6
-#: .\templates\login.html:19 .\templates\register.html:49
+#: .\templates\common\partials\nav.html:72 .\templates\login.html:6
+#: .\templates\login.html:21 .\templates\register.html:52
 msgid "Вход"
 msgstr ""
 
@@ -221,7 +221,7 @@ msgstr ""
 #: .\templates\common\partials\price-boxes-per-type.html:29
 #: .\templates\common\partials\price-boxes-per-type.html:43
 #: .\templates\common\partials\price-boxes-per-type.html:57
-#: .\templates\common\partials\product-box.html:17
+#: .\templates\common\partials\product-box.html:23
 msgid "ЛВ"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgstr ""
 msgid "Добре дошли!"
 msgstr ""
 
-#: .\templates\login.html:21
+#: .\templates\login.html:23
 msgid "Нямате акаунт?"
 msgstr ""
 
@@ -371,15 +371,15 @@ msgstr ""
 msgid "Лична информация"
 msgstr ""
 
-#: .\templates\register.html:35
+#: .\templates\register.html:37
 msgid "Назад"
 msgstr ""
 
-#: .\templates\register.html:41
+#: .\templates\register.html:43
 msgid "Следващ"
 msgstr ""
 
-#: .\templates\register.html:49
+#: .\templates\register.html:51
 msgid "Вече имате акаунт?"
 msgstr ""
 
