@@ -11,7 +11,7 @@ UserModel = get_user_model()
 @admin.register(UserModel)
 class GymUserAdmin(admin.ModelAdmin):
     form = UserAdminRegisterForm
-    search_fields = ['first_name', 'last_name', 'email']
+    search_fields = ['first_name', 'last_name', 'email', 'phone_number']
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
